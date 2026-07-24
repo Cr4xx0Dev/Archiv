@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Material You 3 Expressive Archiv</title>
+    <title>Material 3 Expressive Archiv</title>
     <!-- Material Symbols Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
         /* ==========================================
-           MATERIAL YOU 3 EXPRESSIVE DARK GREY THEME
+           MATERIAL YOU (M3) DARK GREY THEME & VARS
            ========================================== */
         :root {
             --bg-color: #121212;
             --surface-1: #1e1e1e;
-            --surface-2: #262626;
-            --surface-3: #323232;
-            --surface-variant: #3a3a3a;
-            --primary: #ffffff;
-            --on-primary: #121212;
-            --primary-container: #444444;
+            --surface-2: #282828;
+            --surface-3: #333333;
+            --primary-container: #383838;
             --on-primary-container: #ffffff;
+            --accent: #8ab4f8;
             --text-main: #f0f0f0;
             --text-sub: #aaaaaa;
-            --outline: #3d3d3d;
-            --outline-focus: #666666;
+            --outline: #444444;
             --radius-xl: 28px;
             --radius-l: 20px;
-            --radius-m: 14px;
-            --radius-s: 8px;
-            --transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+            --radius-m: 12px;
+            --transition-easing: cubic-bezier(0.2, 0, 0, 1);
+            --transition-fast: all 0.2s var(--transition-easing);
+            --transition-smooth: all 0.35s var(--transition-easing);
         }
 
         * {
@@ -42,18 +40,13 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             display: flex;
-            flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .layout-container {
-            display: flex;
-            flex: 1;
-            min-height: calc(100vh - 70px);
-        }
-
-        /* SIDEBAR (AUSKLAPPBAR) */
+        /* ==========================================
+           SIDEBAR (NAVIGATION)
+           ========================================== */
         .sidebar {
             width: 80px;
             background-color: var(--surface-1);
@@ -61,13 +54,13 @@
             display: flex;
             flex-direction: column;
             padding: 16px 12px;
-            transition: var(--transition);
+            transition: var(--transition-smooth);
             z-index: 100;
             flex-shrink: 0;
         }
 
         .sidebar.expanded {
-            width: 270px;
+            width: 260px;
         }
 
         .toggle-btn {
@@ -81,38 +74,41 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            margin-bottom: 20px;
-            transition: var(--transition);
+            margin-bottom: 24px;
+            transition: var(--transition-fast);
         }
 
         .toggle-btn:hover {
             background-color: var(--surface-2);
+            transform: scale(1.05);
         }
 
         .nav-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .nav-item {
             display: flex;
             align-items: center;
             gap: 16px;
-            padding: 14px 16px;
+            padding: 16px;
             border-radius: var(--radius-xl);
             color: var(--text-sub);
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition-fast);
             white-space: nowrap;
             overflow: hidden;
             background-color: transparent;
+            user-select: none;
         }
 
         .nav-item:hover {
             background-color: var(--surface-2);
             color: var(--text-main);
+            transform: translateX(3px);
         }
 
         .nav-item.active {
@@ -123,12 +119,11 @@
 
         .nav-item .material-symbols-outlined {
             font-size: 24px;
-            flex-shrink: 0;
         }
 
         .nav-text {
             opacity: 0;
-            transition: var(--transition);
+            transition: opacity 0.25s var(--transition-easing);
             font-size: 0.95rem;
         }
 
@@ -136,111 +131,151 @@
             opacity: 1;
         }
 
-        /* HAUPTINHALT */
+        /* ==========================================
+           HAUPTINHALT & ANIMIERTE SEITEN
+           ========================================== */
         .main-content {
             flex-grow: 1;
             padding: 32px;
             overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
         }
 
-        .top-bar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .page-section {
+            display: none;
+            animation: fadeInSlide 0.4s var(--transition-easing) forwards;
         }
 
-        .header-title-container {
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==========================================
+           STARTSEITE (HOME) COMPONENTS
+           ========================================== */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
+            border: 1px solid var(--outline);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            margin-bottom: 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
+            gap: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .hero-text p {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        /* GIF Showcase Widget */
+        .gif-showcase {
+            width: 220px;
+            height: 160px;
+            border-radius: var(--radius-l);
+            overflow: hidden;
+            border: 1px solid var(--outline);
+            flex-shrink: 0;
+            background-color: var(--surface-3);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+            transition: var(--transition-smooth);
+        }
+
+        .gif-showcase:hover {
+            transform: scale(1.03) rotate(1deg);
+        }
+
+        .gif-showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--surface-1);
+            border: 1px solid var(--outline);
+            padding: 20px;
+            border-radius: var(--radius-l);
+            display: flex;
+            align-items: center;
             gap: 16px;
         }
 
-        .header-title-container h1 {
-            font-size: 2.2rem;
-            font-weight: 500;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
+        .stat-card .material-symbols-outlined {
+            font-size: 32px;
+            color: var(--accent);
         }
 
-        /* SUCHLEISTE & CHIPS */
-        .search-box {
+        /* ==========================================
+           SUCHLEISTE (SEARCH)
+           ========================================== */
+        .search-bar-container {
+            margin-bottom: 24px;
             position: relative;
-            width: 100%;
-            max-width: 500px;
+            max-width: 600px;
         }
 
-        .search-box input {
+        .search-input {
             width: 100%;
-            padding: 14px 20px 14px 50px;
+            padding: 14px 20px 14px 48px;
             background-color: var(--surface-1);
             border: 1px solid var(--outline);
             border-radius: var(--radius-xl);
             color: var(--text-main);
-            font-size: 0.95rem;
+            font-size: 1rem;
             outline: none;
-            transition: var(--transition);
+            transition: var(--transition-fast);
         }
 
-        .search-box input:focus {
-            border-color: var(--outline-focus);
+        .search-input:focus {
+            border-color: var(--accent);
             background-color: var(--surface-2);
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.2);
         }
 
-        .search-box .material-symbols-outlined {
+        .search-icon {
             position: absolute;
-            left: 18px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-sub);
             pointer-events: none;
         }
 
-        .subcategories-bar {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding-bottom: 8px;
-            scrollbar-width: thin;
-        }
-
-        .subcat-chip {
-            background-color: var(--surface-1);
-            border: 1px solid var(--outline);
-            color: var(--text-sub);
-            padding: 8px 18px;
-            border-radius: var(--radius-l);
-            font-size: 0.88rem;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .subcat-chip:hover {
-            background-color: var(--surface-2);
-            color: var(--text-main);
-            border-color: #555;
-        }
-
-        .subcat-chip.active {
-            background-color: var(--primary);
-            color: var(--on-primary);
-            border-color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* GRID & CARDS */
+        /* ==========================================
+           GRID & CARDS
+           ========================================== */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 24px;
         }
 
@@ -251,19 +286,18 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: var(--transition);
-            position: relative;
+            transition: var(--transition-smooth);
         }
 
         .card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px);
             border-color: #666;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
         }
 
         .card-img-wrapper {
             width: 100%;
-            height: 190px;
+            height: 180px;
             background-color: var(--surface-2);
             display: flex;
             align-items: center;
@@ -276,36 +310,24 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(70%);
-            transition: var(--transition);
+            filter: grayscale(30%);
+            transition: var(--transition-smooth);
         }
 
         .card:hover .card-img-wrapper img {
             filter: grayscale(0%);
-        }
-
-        .badge-subcat {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(18, 18, 18, 0.8);
-            backdrop-filter: blur(8px);
-            color: #ffffff;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: var(--radius-m);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            transform: scale(1.04);
         }
 
         .card-header-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 20px 10px 20px;
+            padding: 16px 20px;
         }
 
         .card-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--text-main);
         }
@@ -313,95 +335,68 @@
         .btn-more {
             background-color: var(--surface-2);
             color: var(--text-main);
-            border: 1px solid var(--outline);
-            padding: 6px 14px;
+            border: none;
+            padding: 8px 16px;
             border-radius: var(--radius-l);
             font-size: 0.85rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 4px;
-            transition: var(--transition);
+            gap: 6px;
+            transition: var(--transition-fast);
         }
 
         .btn-more:hover {
             background-color: var(--surface-3);
-            border-color: #666;
+        }
+
+        .btn-more .icon-expand {
+            transition: transform 0.3s var(--transition-easing);
+        }
+
+        .btn-more.open .icon-expand {
+            transform: rotate(180deg);
         }
 
         .card-description {
             display: none;
-            padding: 0 20px 14px 20px;
+            padding: 0 20px 16px 20px;
             color: var(--text-sub);
             font-size: 0.9rem;
-            line-height: 1.45;
+            line-height: 1.4;
+            animation: fadeIn 0.25s ease-in-out;
         }
 
         .card-description.show {
             display: block;
         }
 
-        /* ACTIONS & BUTTONS */
         .card-actions {
             padding: 16px 20px;
             border-top: 1px solid var(--surface-2);
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: auto;
+            gap: 10px;
             background-color: rgba(255, 255, 255, 0.01);
+            margin-top: auto;
         }
 
-        /* PROMINENTER DOWNLOAD BUTTON */
-        .btn-download-primary {
-            background-color: var(--primary);
-            color: var(--on-primary);
+        .accordion-btn {
+            background: var(--surface-2);
             border: none;
-            padding: 12px 20px;
-            border-radius: var(--radius-l);
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-download-primary:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.02);
-            box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
-        }
-
-        .btn-group-row {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-sub-action {
-            flex: 1;
-            background-color: var(--surface-2);
             color: var(--text-main);
-            border: 1px solid var(--outline);
-            padding: 10px 12px;
+            padding: 10px 14px;
             border-radius: var(--radius-m);
-            font-size: 0.82rem;
             cursor: pointer;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: var(--transition);
-            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition-fast);
         }
 
-        .btn-sub-action:hover {
-            background-color: var(--surface-3);
-            border-color: #666;
+        .accordion-btn:hover {
+            background: var(--surface-3);
         }
 
         .accordion-content {
@@ -412,51 +407,32 @@
             font-size: 0.85rem;
             color: var(--text-sub);
             word-break: break-all;
-            border: 1px solid var(--outline);
+            animation: fadeIn 0.25s ease-in-out;
         }
 
         .accordion-content.show {
             display: block;
         }
 
-        .screenshots-gallery {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding: 6px 0;
-        }
-
-        .screenshots-gallery img {
-            height: 90px;
-            border-radius: var(--radius-s);
-            border: 1px solid var(--outline);
-            object-fit: cover;
-        }
-
-        /* FOOTER */
-        .site-footer {
-            background-color: var(--surface-1);
-            border-top: 1px solid var(--outline);
-            padding: 20px;
-            text-align: center;
-            font-size: 0.95rem;
-            margin-top: auto;
-        }
-
-        .site-footer a {
-            color: #ffffff;
-            font-weight: 600;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            transition: var(--transition);
-        }
-
-        .site-footer a:hover {
+        .accordion-content a {
+            color: var(--accent);
             text-decoration: underline;
-            opacity: 0.8;
         }
 
-        @media (max-width: 650px) {
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .gif-showcase {
+                width: 100%;
+                height: 180px;
+            }
             .sidebar {
                 position: fixed;
                 height: 100vh;
@@ -465,170 +441,181 @@
                 margin-left: 80px;
                 padding: 16px;
             }
-            .btn-group-row {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
 <body>
 
-    <div class="layout-container">
-        <!-- SIDEBAR -->
-        <nav class="sidebar" id="sidebar">
-            <button class="toggle-btn" onclick="toggleSidebar()">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
-            <ul class="nav-list">
-                <li class="nav-item active" onclick="switchMainCategory('minecraft', this)">
-                    <span class="material-symbols-outlined">sports_esports</span>
-                    <span class="nav-text">Minecraft</span>
-                </li>
-                <li class="nav-item" onclick="switchMainCategory('android', this)">
-                    <span class="material-symbols-outlined">android</span>
-                    <span class="nav-text">Android & Applications</span>
-                </li>
-                <li class="nav-item" onclick="switchMainCategory('scripte', this)">
-                    <span class="material-symbols-outlined">code</span>
-                    <span class="nav-text">Scripte</span>
-                </li>
-                <li class="nav-item" onclick="switchMainCategory('design', this)">
-                    <span class="material-symbols-outlined">palette</span>
-                    <span class="nav-text">Design & Themes</span>
-                </li>
-                <li class="nav-item" onclick="switchMainCategory('tools', this)">
-                    <span class="material-symbols-outlined">construction</span>
-                    <span class="nav-text">Tools & Utilities</span>
-                </li>
-                <li class="nav-item" onclick="switchMainCategory('misc', this)">
-                    <span class="material-symbols-outlined">folder_open</span>
-                    <span class="nav-text">Trash & Misc</span>
-                </li>
-            </ul>
-        </nav>
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()" aria-label="Menü umschalten">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <ul class="nav-list">
+            <li class="nav-item active" onclick="switchTab('home', this)">
+                <span class="material-symbols-outlined">home</span>
+                <span class="nav-text">Startseite</span>
+            </li>
+            <li class="nav-item" onclick="switchTab('minecraft', this)">
+                <span class="material-symbols-outlined">sports_esports</span>
+                <span class="nav-text">Minecraft</span>
+            </li>
+            <li class="nav-item" onclick="switchTab('android', this)">
+                <span class="material-symbols-outlined">android</span>
+                <span class="nav-text">Android & Apps</span>
+            </li>
+            <li class="nav-item" onclick="switchTab('scripte', this)">
+                <span class="material-symbols-outlined">code</span>
+                <span class="nav-text">Scripte</span>
+            </li>
+            <li class="nav-item" onclick="switchTab('misc', this)">
+                <span class="material-symbols-outlined">folder_open</span>
+                <span class="nav-text">Misc & Müll</span>
+            </li>
+        </ul>
+    </nav>
 
-        <!-- HAUPTBEREICH -->
-        <main class="main-content">
-            <div class="top-bar">
-                <div class="header-title-container">
-                    <h1 id="category-title">Minecraft</h1>
-                    
-                    <!-- SUCHLEISTE -->
-                    <div class="search-box">
-                        <span class="material-symbols-outlined">search</span>
-                        <input type="text" id="search-input" placeholder="Beiträge, Cheats, Scripte suchen..." oninput="handleSearch()">
+    <!-- HAUPTBEREICH -->
+    <main class="main-content">
+
+        <!-- STARTSEITE (HOME) -->
+        <section id="page-home" class="page-section active">
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <h1>Willkommen im Archiv</h1>
+                    <p>Zentrale Übersicht für Minecraft-Mods, Android-Apps, Scripte und Sammlungen.</p>
+                </div>
+                <!-- GIF Container / Showcase -->
+                <div class="gif-showcase">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eXU2MGdhaGN1MWI3OW41OXd2YnM0Ym41OGs5ZTZ1YXA1OHlhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svvAQQyVY9/giphy.gif" alt="Archiv GIF Header">
+                </div>
+            </div>
+
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    <div>
+                        <strong id="stat-count">0</strong>
+                        <p style="color: var(--text-sub); font-size: 0.85rem;">Projekte eingetragen</p>
                     </div>
                 </div>
+                <div class="stat-card">
+                    <span class="material-symbols-outlined">auto_awesome</span>
+                    <div>
+                        <strong>Material 3</strong>
+                        <p style="color: var(--text-sub); font-size: 0.85rem;">Expressive UI Design</p>
+                    </div>
+                </div>
+            </div>
 
-                <!-- SUBKATEGORIEN / FILTER CHIPS -->
-                <div class="subcategories-bar" id="subcategories-bar">
-                    <!-- Dynamisch befüllt -->
+            <h2 style="margin-bottom: 20px; font-weight: 500;">Neueste Highlight-Einträge</h2>
+            <div class="project-grid" id="home-grid">
+                <!-- Highlights werden hier gerendert -->
+            </div>
+        </section>
+
+        <!-- DYNAMISCHE KATEGORIE- & SUCH-SEITE -->
+        <section id="page-category" class="page-section">
+            <div class="header">
+                <h1 id="category-title" style="margin-bottom: 20px;">Kategorie</h1>
+                
+                <!-- SUCHLEISTE -->
+                <div class="search-bar-container">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="In dieser Kategorie suchen..."
+                        oninput="handleSearch()"
+                    >
                 </div>
             </div>
 
             <div class="project-grid" id="project-grid">
-                <!-- Karten werden dynamisch eingefügt -->
+                <!-- Dynamische Karten werden hier per JS eingefügt -->
             </div>
-        </main>
-    </div>
+        </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <a href="https://t.me/cr4xx0" target="_blank">t.me/cr4xx0</a>
-    </footer>
+    </main>
 
     <script>
         let projects = [];
-        let currentMainCat = 'minecraft';
-        let currentSubCat = 'all';
+        let currentTab = 'home';
         let searchQuery = '';
 
-        // Subkategorien-Konfiguration pro Hauptkategorie
-        const subCategoriesConfig = {
-            'minecraft': ['all', 'Cheats & Mods', 'Scripte', 'Texturepacks', 'Plugins'],
-            'android': ['all', 'Apps', 'LSPosed & Root', 'ReVanced', 'Bypasses'],
-            'scripte': ['all', 'Brawl Stars', 'Cheats', 'Python', 'Frida & Hooking'],
-            'design': ['all', 'Material You', 'Discord Themes', 'Icon Packs', 'Wallpapers'],
-            'tools': ['all', 'Utilities', 'ADB & Fastboot', 'Automation'],
-            'misc': ['all', 'Dotfiles', 'Configs', 'Trash']
-        };
+        // DEMO-FALLBACK MIT GIFS
+        const fallbackProjects = [
+            {
+                id: "mc-server",
+                category: "minecraft",
+                name: "Minecraft Modpack Server",
+                image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnJ2MGs5ZmNrbDFnaW8xeGFwYmFmbGlxdGFkM3kyNnh6cnl2eW5kOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cu1HaF3RAtO3A6239f/giphy.gif",
+                description: "Custom Server mit Fabric, Sodium und eigenen Mod-Konfigurationen.",
+                sources: "https://github.com",
+                tutorials: "Start-Script ausführen: `./start.sh`"
+            },
+            {
+                id: "expressive-space",
+                category: "android",
+                name: "ExpressiveSpace Launcher",
+                image: "https://picsum.photos/400/200?random=10",
+                description: "Material You / Expressive Android Launcher Custom Build.",
+                sources: "https://github.com",
+                tutorials: "In Android Studio importieren und als APK kompilieren."
+            },
+            {
+                id: "system-cleaner",
+                category: "scripte",
+                name: "Arch & Hyprland Cleanup",
+                image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnUxb3I0NWRscXJtcnR4NWtrdmtrMDQ2ZGhyOGM0OXprZXJ4am5zNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L12IT4jCvhYAt5fPSp/giphy.gif",
+                description: "Bash Script zum automatischen Säubern von Pacman-Cache und Flatpaks.",
+                sources: "https://github.com",
+                tutorials: "Ausführbar machen: `chmod +x clean.sh`"
+            }
+        ];
 
-        const mainCategoryTitles = {
-            'minecraft': 'Minecraft',
-            'android': 'Android & Applications',
-            'scripte': 'Scripte & Code',
-            'design': 'Design & Themes',
-            'tools': 'Tools & Utilities',
-            'misc': 'Trash & Misc'
-        };
-
+        // LÄDT PROJECTS.JSON ODER NUTZT FALLBACK
         fetch('projects.json')
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) throw new Error("HTTP Fehler " + res.status);
+                return res.json();
+            })
             .then(data => {
                 projects = data;
-                switchMainCategory('minecraft', document.querySelector('.nav-item.active'));
+                initApp();
             })
             .catch(err => {
-                console.error("Fehler beim Laden von projects.json:", err);
-                document.getElementById('project-grid').innerHTML = '<p style="color: var(--text-sub);">Fehler beim Laden der projects.json Datei.</p>';
+                console.warn("Laden von projects.json fehlgeschlagen (z.B. wegen file:// CORS). Verfahre mit Demo-Daten.", err);
+                projects = fallbackProjects;
+                initApp();
             });
+
+        function initApp() {
+            document.getElementById('stat-count').innerText = projects.length;
+            renderHome();
+        }
 
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('expanded');
         }
 
-        function switchMainCategory(catKey, element) {
-            currentMainCat = catKey;
-            currentSubCat = 'all';
+        // SWAP TABS (Startseite vs. Kategorien)
+        function switchTab(tab, element) {
+            currentTab = tab;
             searchQuery = '';
-            document.getElementById('search-input').value = '';
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) searchInput.value = '';
 
             document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
             if (element) element.classList.add('active');
 
-            document.getElementById('category-title').innerText = mainCategoryTitles[catKey] || catKey;
+            const homeSec = document.getElementById('page-home');
+            const catSec = document.getElementById('page-category');
 
-            renderSubcategoryChips();
-            renderCards();
-        }
-
-        function renderSubcategoryChips() {
-            const subBar = document.getElementById('subcategories-bar');
-            subBar.innerHTML = '';
-
-            const subCats = subCategoriesConfig[currentMainCat] || ['all'];
-
-            subCats.forEach(sub => {
-                const chip = document.createElement('button');
-                chip.className = `subcat-chip ${sub === currentSubCat ? 'active' : ''}`;
-                chip.innerText = sub === 'all' ? 'Alle Beiträge' : sub;
-                chip.onclick = () => {
-                    currentSubCat = sub;
-                    document.querySelectorAll('.subcat-chip').forEach(c => c.classList.remove('active'));
-                    chip.classList.add('active');
-                    renderCards();
-                };
-                subBar.appendChild(chip);
-            });
-        }
-
-        function handleSearch() {
-            searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
-            renderCards();
-        }
-
-        function renderCards() {
-            const grid = document.getElementById('project-grid');
-            grid.innerHTML = '';
-
-            const filtered = projects.filter(p => {
-                const matchesMainCat = p.category === currentMainCat;
-                const matchesSubCat = (currentSubCat === 'all') || (p.subcategory && p.subcategory.toLowerCase() === currentSubCat.toLowerCase());
-                
-                const titleMatch = p.name ? p.name.toLowerCase().includes(searchQuery) : false;
-                const descMatch = p.description ? p.description.toLowerCase().includes(searchQuery) : false;
-                const subMatch = p.subcategory ? p.subcategory.toLowerCase().includes(searchQuery) : false;
-                
-                const matchesSearch = !searchQuery || titleMatch || descMatch || subMatch;
-
-       
+            if (tab === 'home') {
+                homeSec.classList.add('active');
+                catSec.classList.remove('active');
+                renderHome();
+            } else {
+     
