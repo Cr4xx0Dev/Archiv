@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "name": "MoveMD Transit App",
+    "category": "android",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=MoveMD",
+    "description": "Eine Open-Source Nahverkehrs-App für Magdeburg im Material Design 3 Expressive Look.",
+    "sources": "https://github.com/example/movemd",
+    "screenshots": [
+      "https://via.placeholder.com/300x600/1e1e1e/d0bcff?text=Screen+1",
+      "https://via.placeholder.com/300x600/1e1e1e/d0bcff?text=Screen+2"
+    ],
+    "tutorials": "Lade die APK aus den GitHub Releases herunter oder baue das Projekt direkt in Android Studio."
+  },
+  {
+    "id": 2,
+    "name": "Hyprland Rice Config",
+    "category": "themes",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Hyprland+Rice",
+    "description": "Minimalistisches Dark-Theme Dotfiles-Setup für Arch Linux und Hyprland mit Waybar und Rofi.",
+    "sources": "https://github.com/example/dotfiles",
+    "screenshots": [
+      "https://via.placeholder.com/600x400/121212/ffffff?text=Desktop+Overview"
+    ],
+    "script": "git clone https://github.com/example/dotfiles.git ~/.config/hypr\nhyprctl reload"
+  },
+  {
+    "id": 3,
+    "name": "Minecraft Modpack Server Config",
+    "category": "minecraft",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Minecraft+Server",
+    "description": "Optimierte Server-Konfigurationen und Skripte für Paper und Fabric Instanzen.",
+    "sources": "https://github.com/example/mc-configs",
+    "script": "#!/bin/bash\n# Quick start server script\njava -Xms4G -Xmx8G -jar fabric-server.jar nogui",
+    "tutorials": "Kopiere die Skripte in dein Serververzeichnis und passe die RAM-Zuweisung in start.sh an."
+  },
+  {
+    "id": 4,
+    "name": "PS3 HEN Utility & Helper",
+    "category": "ps3",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=PS3+Homebrew",
+    "description": "Sammlung nützlicher Homebrew-Tools, PKG-Installer Helper und Config-Templates für PS3 HEN.",
+    "sources": "https://github.com/example/ps3-hen-tools",
+    "tutorials": "Kopiere die Dateien auf einen FAT32-formatierten USB-Stick im Stammverzeichnis."
+  },
+  {
+    "id": 5,
+    "name": "System Maintenance Script",
+    "category": "scripte",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Arch+Maintenance",
+    "description": "Ein automatisches Skript zur Systempflege, Cache-Reinigung und Verwaiste-Pakete-Entfernung unter Arch Linux.",
+    "sources": "https://github.com/example/arch-cleaner",
+    "script": "#!/bin/bash\necho \"Cleaning pacman cache...\"\nsudo pacman -Sc --noconfirm\necho \"Removing orphaned packages...\"\nsudo pacman -Rns $(pacman -Qtdq) --noconfirm"
+  },
+  {
+    "id": 6,
+    "name": "Media Archive Backup Tool",
+    "category": "misc",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Archive+Tool",
+    "description": "Tool zum Archivieren und Strukturieren lokaler Mediensammlungen und Metadaten.",
+    "sources": "https://github.com/example/media-archive",
+    "tutorials": "Führe main.py aus und gib den Pfad deines Zielverzeichnisses an."
+  }
+]
