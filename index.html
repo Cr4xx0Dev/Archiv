@@ -7,9 +7,6 @@
     <!-- Material Symbols Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
-        /* ==========================================
-           MATERIAL YOU (M3) DARK GREY THEME & VARS
-           ========================================== */
         :root {
             --bg-color: #121212;
             --surface-1: #1e1e1e;
@@ -44,9 +41,7 @@
             overflow-x: hidden;
         }
 
-        /* ==========================================
-           SIDEBAR (NAVIGATION)
-           ========================================== */
+        /* SIDEBAR */
         .sidebar {
             width: 80px;
             background-color: var(--surface-1);
@@ -131,9 +126,7 @@
             opacity: 1;
         }
 
-        /* ==========================================
-           HAUPTINHALT & ANIMIERTE SEITEN
-           ========================================== */
+        /* CONTENT & SECTIONS */
         .main-content {
             flex-grow: 1;
             padding: 32px;
@@ -142,7 +135,7 @@
 
         .page-section {
             display: none;
-            animation: fadeInSlide 0.4s var(--transition-easing) forwards;
+            animation: fadeInSlide 0.35s var(--transition-easing) forwards;
         }
 
         .page-section.active {
@@ -152,7 +145,7 @@
         @keyframes fadeInSlide {
             from {
                 opacity: 0;
-                transform: translateY(16px);
+                transform: translateY(12px);
             }
             to {
                 opacity: 1;
@@ -160,9 +153,7 @@
             }
         }
 
-        /* ==========================================
-           STARTSEITE (HOME) COMPONENTS
-           ========================================== */
+        /* HERO & GIF SHOWCASE */
         .hero-banner {
             background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
             border: 1px solid var(--outline);
@@ -173,7 +164,6 @@
             align-items: center;
             justify-content: space-between;
             gap: 24px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero-text h1 {
@@ -186,24 +176,16 @@
             color: var(--text-sub);
             font-size: 1.05rem;
             max-width: 500px;
-            line-height: 1.5;
         }
 
-        /* GIF Showcase Widget */
         .gif-showcase {
-            width: 220px;
-            height: 160px;
+            width: 200px;
+            height: 140px;
             border-radius: var(--radius-l);
             overflow: hidden;
             border: 1px solid var(--outline);
             flex-shrink: 0;
             background-color: var(--surface-3);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-            transition: var(--transition-smooth);
-        }
-
-        .gif-showcase:hover {
-            transform: scale(1.03) rotate(1deg);
         }
 
         .gif-showcase img {
@@ -212,31 +194,7 @@
             object-fit: cover;
         }
 
-        .quick-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .stat-card {
-            background: var(--surface-1);
-            border: 1px solid var(--outline);
-            padding: 20px;
-            border-radius: var(--radius-l);
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .stat-card .material-symbols-outlined {
-            font-size: 32px;
-            color: var(--accent);
-        }
-
-        /* ==========================================
-           SUCHLEISTE (SEARCH)
-           ========================================== */
+        /* SEARCH BAR */
         .search-bar-container {
             margin-bottom: 24px;
             position: relative;
@@ -258,7 +216,6 @@
         .search-input:focus {
             border-color: var(--accent);
             background-color: var(--surface-2);
-            box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.2);
         }
 
         .search-icon {
@@ -270,9 +227,7 @@
             pointer-events: none;
         }
 
-        /* ==========================================
-           GRID & CARDS
-           ========================================== */
+        /* GRID & CARDS */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -290,33 +245,27 @@
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             border-color: #666;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
         }
 
         .card-img-wrapper {
             width: 100%;
             height: 180px;
             background-color: var(--surface-2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            position: relative;
         }
 
         .card-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(30%);
             transition: var(--transition-smooth);
         }
 
         .card:hover .card-img-wrapper img {
-            filter: grayscale(0%);
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .card-header-bar {
@@ -329,7 +278,6 @@
         .card-title {
             font-size: 1.2rem;
             font-weight: 600;
-            color: var(--text-main);
         }
 
         .btn-more {
@@ -343,15 +291,10 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: var(--transition-fast);
-        }
-
-        .btn-more:hover {
-            background-color: var(--surface-3);
         }
 
         .btn-more .icon-expand {
-            transition: transform 0.3s var(--transition-easing);
+            transition: transform 0.25s ease;
         }
 
         .btn-more.open .icon-expand {
@@ -364,7 +307,6 @@
             color: var(--text-sub);
             font-size: 0.9rem;
             line-height: 1.4;
-            animation: fadeIn 0.25s ease-in-out;
         }
 
         .card-description.show {
@@ -377,7 +319,6 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            background-color: rgba(255, 255, 255, 0.01);
             margin-top: auto;
         }
 
@@ -392,11 +333,6 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.85rem;
-            transition: var(--transition-fast);
-        }
-
-        .accordion-btn:hover {
-            background: var(--surface-3);
         }
 
         .accordion-content {
@@ -407,7 +343,6 @@
             font-size: 0.85rem;
             color: var(--text-sub);
             word-break: break-all;
-            animation: fadeIn 0.25s ease-in-out;
         }
 
         .accordion-content.show {
@@ -419,36 +354,29 @@
             text-decoration: underline;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .error-banner {
+            background-color: #4a1515;
+            color: #ff9999;
+            padding: 16px;
+            border-radius: var(--radius-m);
+            border: 1px solid #882222;
+            margin-bottom: 20px;
+            display: none;
         }
 
         @media (max-width: 768px) {
-            .hero-banner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .gif-showcase {
-                width: 100%;
-                height: 180px;
-            }
-            .sidebar {
-                position: fixed;
-                height: 100vh;
-            }
-            .main-content {
-                margin-left: 80px;
-                padding: 16px;
-            }
+            .sidebar { position: fixed; height: 100vh; }
+            .main-content { margin-left: 80px; padding: 16px; }
+            .hero-banner { flex-direction: column; }
+            .gif-showcase { width: 100%; height: 160px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- SIDEBAR -->
+    <!-- NAVIGATION SIDEBAR -->
     <nav class="sidebar" id="sidebar">
-        <button class="toggle-btn" onclick="toggleSidebar()" aria-label="Menü umschalten">
+        <button class="toggle-btn" onclick="toggleSidebar()">
             <span class="material-symbols-outlined">menu</span>
         </button>
         <ul class="nav-list">
@@ -477,66 +405,35 @@
 
     <!-- HAUPTBEREICH -->
     <main class="main-content">
+        <div id="error-box" class="error-banner"></div>
 
-        <!-- STARTSEITE (HOME) -->
+        <!-- STARTSEITE -->
         <section id="page-home" class="page-section active">
             <div class="hero-banner">
                 <div class="hero-text">
-                    <h1>Willkommen im Archiv</h1>
-                    <p>Zentrale Übersicht für Minecraft-Mods, Android-Apps, Scripte und Sammlungen.</p>
+                    <h1>Material 3 Archiv</h1>
+                    <p>Wähle eine Kategorie in der Menüleiste links oder nutze die Suche.</p>
                 </div>
-                <!-- GIF Container / Showcase -->
                 <div class="gif-showcase">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eXU2MGdhaGN1MWI3OW41OXd2YnM0Ym41OGs5ZTZ1YXA1OHlhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svvAQQyVY9/giphy.gif" alt="Archiv GIF Header">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eXU2MGdhaGN1MWI3OW41OXd2YnM0Ym41OGs5ZTZ1YXA1OHlhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svvAQQyVY9/giphy.gif" alt="GIF Banner">
                 </div>
             </div>
 
-            <div class="quick-stats">
-                <div class="stat-card">
-                    <span class="material-symbols-outlined">inventory_2</span>
-                    <div>
-                        <strong id="stat-count">0</strong>
-                        <p style="color: var(--text-sub); font-size: 0.85rem;">Projekte eingetragen</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <span class="material-symbols-outlined">auto_awesome</span>
-                    <div>
-                        <strong>Material 3</strong>
-                        <p style="color: var(--text-sub); font-size: 0.85rem;">Expressive UI Design</p>
-                    </div>
-                </div>
-            </div>
-
-            <h2 style="margin-bottom: 20px; font-weight: 500;">Neueste Highlight-Einträge</h2>
-            <div class="project-grid" id="home-grid">
-                <!-- Highlights werden hier gerendert -->
-            </div>
+            <h2 style="margin-bottom: 20px; font-weight: 500;">Übersicht</h2>
+            <div class="project-grid" id="home-grid"></div>
         </section>
 
-        <!-- DYNAMISCHE KATEGORIE- & SUCH-SEITE -->
+        <!-- KATEGORIE & SUCHE -->
         <section id="page-category" class="page-section">
-            <div class="header">
-                <h1 id="category-title" style="margin-bottom: 20px;">Kategorie</h1>
-                
-                <!-- SUCHLEISTE -->
-                <div class="search-bar-container">
-                    <span class="material-symbols-outlined search-icon">search</span>
-                    <input 
-                        type="search" 
-                        id="search-input" 
-                        class="search-input" 
-                        placeholder="In dieser Kategorie suchen..."
-                        oninput="handleSearch()"
-                    >
-                </div>
+            <h1 id="category-title" style="margin-bottom: 20px;">Kategorie</h1>
+            
+            <div class="search-bar-container">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="search" id="search-input" class="search-input" placeholder="In dieser Kategorie suchen..." oninput="handleSearch()">
             </div>
 
-            <div class="project-grid" id="project-grid">
-                <!-- Dynamische Karten werden hier per JS eingefügt -->
-            </div>
+            <div class="project-grid" id="project-grid"></div>
         </section>
-
     </main>
 
     <script>
@@ -544,63 +441,33 @@
         let currentTab = 'home';
         let searchQuery = '';
 
-        // DEMO-FALLBACK MIT GIFS
-        const fallbackProjects = [
-            {
-                id: "mc-server",
-                category: "minecraft",
-                name: "Minecraft Modpack Server",
-                image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnJ2MGs5ZmNrbDFnaW8xeGFwYmFmbGlxdGFkM3kyNnh6cnl2eW5kOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cu1HaF3RAtO3A6239f/giphy.gif",
-                description: "Custom Server mit Fabric, Sodium und eigenen Mod-Konfigurationen.",
-                sources: "https://github.com",
-                tutorials: "Start-Script ausführen: `./start.sh`"
-            },
-            {
-                id: "expressive-space",
-                category: "android",
-                name: "ExpressiveSpace Launcher",
-                image: "https://picsum.photos/400/200?random=10",
-                description: "Material You / Expressive Android Launcher Custom Build.",
-                sources: "https://github.com",
-                tutorials: "In Android Studio importieren und als APK kompilieren."
-            },
-            {
-                id: "system-cleaner",
-                category: "scripte",
-                name: "Arch & Hyprland Cleanup",
-                image: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnUxb3I0NWRscXJtcnR4NWtrdmtrMDQ2ZGhyOGM0OXprZXJ4am5zNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L12IT4jCvhYAt5fPSp/giphy.gif",
-                description: "Bash Script zum automatischen Säubern von Pacman-Cache und Flatpaks.",
-                sources: "https://github.com",
-                tutorials: "Ausführbar machen: `chmod +x clean.sh`"
-            }
-        ];
+        // SEITENSTART: LADE JSON
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('projects.json')
+                .then(res => {
+                    if (!res.ok) throw new Error("HTTP Fehler Status " + res.status);
+                    return res.json();
+                })
+                .then(data => {
+                    projects = data;
+                    renderHome();
+                })
+                .catch(err => {
+                    showError("<b>Fehler beim Laden der projects.json:</b><br>" + err.message + 
+                              "<br><small>Tipp: Falls du die Datei lokal per Doppelklick geöffnet hast, nutze einen lokalen Server (z.B. Live Server in VS Code).</small>");
+                });
+        });
 
-        // LÄDT PROJECTS.JSON ODER NUTZT FALLBACK
-        fetch('projects.json')
-            .then(res => {
-                if (!res.ok) throw new Error("HTTP Fehler " + res.status);
-                return res.json();
-            })
-            .then(data => {
-                projects = data;
-                initApp();
-            })
-            .catch(err => {
-                console.warn("Laden von projects.json fehlgeschlagen (z.B. wegen file:// CORS). Verfahre mit Demo-Daten.", err);
-                projects = fallbackProjects;
-                initApp();
-            });
-
-        function initApp() {
-            document.getElementById('stat-count').innerText = projects.length;
-            renderHome();
+        function showError(msg) {
+            const errBox = document.getElementById('error-box');
+            errBox.innerHTML = msg;
+            errBox.style.display = 'block';
         }
 
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('expanded');
         }
 
-        // SWAP TABS (Startseite vs. Kategorien)
         function switchTab(tab, element) {
             currentTab = tab;
             searchQuery = '';
@@ -618,4 +485,112 @@
                 catSec.classList.remove('active');
                 renderHome();
             } else {
-     
+                homeSec.classList.remove('active');
+                catSec.classList.add('active');
+
+                const titles = {
+                    'minecraft': 'Minecraft',
+                    'android': 'Android & Apps',
+                    'scripte': 'Scripte & Tools',
+                    'misc': 'Misc & Müll / Archiv'
+                };
+                document.getElementById('category-title').innerText = titles[tab] || tab;
+                renderCategoryCards();
+            }
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById('search-input').value.toLowerCase();
+            renderCategoryCards();
+        }
+
+        function renderHome() {
+            const grid = document.getElementById('home-grid');
+            if (!projects || projects.length === 0) {
+                grid.innerHTML = '<p style="color: var(--text-sub);">Keine Projekte geladen.</p>';
+                return;
+            }
+            grid.innerHTML = projects.slice(0, 6).map((p, i) => createCardHTML(p, i, 'home')).join('');
+        }
+
+        function renderCategoryCards() {
+            const grid = document.getElementById('project-grid');
+            
+            // Vergleicht Kategorien schreibweisen-unabhängig (lowercase)
+            const filtered = projects.filter(p => {
+                const pCat = (p.category || '').toLowerCase();
+                const targetCat = currentTab.toLowerCase();
+                const matchesCat = pCat === targetCat;
+
+                const nameMatch = (p.name || '').toLowerCase().includes(searchQuery);
+                const descMatch = (p.description || '').toLowerCase().includes(searchQuery);
+                
+                return matchesCat && (nameMatch || descMatch);
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<p style="color: var(--text-sub); grid-column: 1/-1;">Keine Einträge für diese Kategorie / Suche gefunden.</p>';
+                return;
+            }
+
+            grid.innerHTML = filtered.map((p, i) => createCardHTML(p, i, currentTab)).join('');
+        }
+
+        function createCardHTML(project, idx, prefix) {
+            const safeName = (project.name || 'Projekt').replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+            const uid = `${prefix}-${project.id || idx}-${safeName}`;
+
+            return `
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="${project.image || ''}" alt="${project.name || 'Bild'}" onerror="this.src='https://via.placeholder.com/400x200/282828/ffffff?text=Kein+Bild'">
+                    </div>
+                    <div class="card-header-bar">
+                        <span class="card-title">${project.name || 'Unbenannt'}</span>
+                        <button class="btn-more" id="btn-more-${uid}" onclick="toggleDetails('${uid}')">
+                            Mehr
+                            <span class="material-symbols-outlined icon-expand" style="font-size: 16px;">expand_more</span>
+                        </button>
+                    </div>
+                    <div class="card-description" id="desc-${uid}">
+                        ${project.description || 'Keine Beschreibung vorhanden.'}
+                    </div>
+                    <div class="card-actions">
+                        ${project.sources ? `
+                            <button class="accordion-btn" onclick="toggleAccordion('sources-${uid}')">
+                                <span>Quellen / Links</span>
+                                <span class="material-symbols-outlined" style="font-size: 16px;">link</span>
+                            </button>
+                            <div class="accordion-content" id="sources-${uid}">
+                                <a href="${project.sources}" target="_blank" rel="noopener noreferrer">${project.sources}</a>
+                            </div>
+                        ` : ''}
+
+                        ${project.tutorials ? `
+                            <button class="accordion-btn" onclick="toggleAccordion('tut-${uid}')">
+                                <span>Tutorial / Info</span>
+                                <span class="material-symbols-outlined" style="font-size: 16px;">help_outline</span>
+                            </button>
+                            <div class="accordion-content" id="tut-${uid}">
+                                ${project.tutorials}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleDetails(uid) {
+            const desc = document.getElementById(`desc-${uid}`);
+            const btn = document.getElementById(`btn-more-${uid}`);
+            if (desc) desc.classList.toggle('show');
+            if (btn) btn.classList.toggle('open');
+        }
+
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            if (content) content.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
