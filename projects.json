@@ -1,34 +1,53 @@
 [
   {
-    "name": "Hello Script",
-    "category": "minecraft",
-    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Minecraft+Mod",
-    "description": "Ein spezielles Minecraft-Script zur Automatisierung und Mod-Konfiguration.",
-    "sources": "https://github.com/dein-username/hello-script",
-    "tutorials": "Führe einfach `python run.py` aus oder schau in den Telegram Channel."
-  },
-  {
-    "name": "Material Discord Theme",
-    "category": "android",
-    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Material+Discord",
-    "description": "Dunkles Material You Theme mit abgerundeten Ecken für Discord Mobile.",
-    "sources": "https://github.com/dein-username/Material-Discord",
-    "tutorials": "Installation per ReVanced CLI oder Modded APK."
-  },
-  {
-    "name": "Frida Bypass Helper",
+    "name": "Brawl Stars Auto Script",
     "category": "scripte",
-    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Frida+Scripts",
-    "description": "Nützliche Frida-Hooks für App-Bypasses und Log-Analysen.",
-    "sources": "https://github.com/dein-username/frida-scripts",
-    "tutorials": "Benötigt Frida Version 16.x auf gerootetem Android."
+    "subcategory": "Brawl Stars",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Brawl+Stars+Script",
+    "description": "Automatisches Python-Script für Log-Analysen und Automatisierung in Brawl Stars.",
+    "downloadUrl": "https://github.com/Cr4xx0Dev/Archiv/releases/download/v1.0/brawl_script.py",
+    "sources": "https://github.com/Cr4xx0Dev/brawl-stars-script",
+    "screenshots": [
+      "https://via.placeholder.com/200x120/333333/ffffff?text=Preview+1",
+      "https://via.placeholder.com/200x120/444444/ffffff?text=Preview+2"
+    ],
+    "tutorials": "Führe `python brawl_script.py` im Terminal aus."
   },
   {
-    "name": "Alte Configs & Backups",
-    "category": "misc",
-    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Misc+Archive",
-    "description": "Sammlung von Dotfiles, alten Scripts und unfertigen Prototypen.",
-    "sources": "https://t.me/dein_telegram_kanal",
-    "tutorials": "Keine Anleitung nötig."
+    "name": "Minecraft Custom Utility Mod",
+    "category": "minecraft",
+    "subcategory": "Cheats & Mods",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Minecraft+Mod",
+    "description": "Utility Mod mit nützlichen Custom Features und Performance Fixes.",
+    "downloadUrl": "https://github.com/Cr4xx0Dev/Archiv/releases/download/v1.0/mod.jar",
+    "sources": "https://github.com/Cr4xx0Dev/minecraft-mod",
+    "screenshots": [
+      "https://via.placeholder.com/200x120/333333/ffffff?text=InGame+1"
+    ],
+    "tutorials": "Kopiere die .jar Datei in deinen .minecraft/mods Ordner."
+  },
+  {
+    "name": "Material You Discord Theme",
+    "category": "design",
+    "subcategory": "Discord Themes",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Material+You+Discord",
+    "description": "Edles Dark Grey Theme im Material You 3 Expressive Look für Discord Mobile.",
+    "downloadUrl": "https://github.com/Cr4xx0Dev/Archiv/releases/download/v1.0/theme.json",
+    "sources": "https://github.com/Cr4xx0Dev/material-discord-theme",
+    "screenshots": [
+      "https://via.placeholder.com/200x120/333333/ffffff?text=UI+Preview"
+    ],
+    "tutorials": "Importiere die theme.json in deinen Modded Discord Client."
+  },
+  {
+    "name": "Frida SSL Unpinning Tool",
+    "category": "android",
+    "subcategory": "Bypasses",
+    "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Frida+Tool",
+    "description": "Universal Frida Script zum Bypassen von Certificate Pinning auf Android.",
+    "downloadUrl": "https://github.com/Cr4xx0Dev/Archiv/releases/download/v1.0/frida_bypass.js",
+    "sources": "https://github.com/Cr4xx0Dev/frida-unpinning",
+    "screenshots": [],
+    "tutorials": "Benutze `frida -U -f com.example.app -l frida_bypass.js`."
   }
 ]
