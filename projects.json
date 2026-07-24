@@ -14,11 +14,16 @@
   },
   {
     "id": 2,
-    "name": "Hyprland Rice Config",
+    "name": "Material Discord (Dark Grey Fork)",
     "category": "themes",
     "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Hyprland+Rice",
-    "description": "Minimalistisches Dark-Theme Dotfiles-Setup für Arch Linux und Hyprland mit Waybar und Rofi.",
-    "sources": "https://github.com/example/dotfiles",
+    "description": "•Dark Grey Color Scheme: Complete
+
+palette overhaul for a sleek,
+
+dark-grey look. •Mixed Shape Dynamics: A balanced design combining sharp square edges with smooth rounded Ul elements.
+  •Material You Aesthetics: Modernized Discord interface components following clean Material design principles.",
+    "sources": "https://github.com/Cr4xx0Dev/Material-Discord-dark-grey",
     "screenshots": [
       "https://via.placeholder.com/600x400/121212/ffffff?text=Desktop+Overview",
       "https://via.placeholder.com/600x400/121212/ffffff?text=Terminal+Setup"
