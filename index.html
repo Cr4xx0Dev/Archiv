@@ -69,13 +69,46 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             transition: var(--transition-fast);
         }
 
         .toggle-btn:hover {
             background-color: var(--surface-2);
             transform: scale(1.05);
+        }
+
+        /* SIDEBAR SEARCH BAR */
+        .sidebar-search-box {
+            position: relative;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            background-color: var(--surface-2);
+            border-radius: var(--radius-xl);
+            padding: 4px 12px;
+            border: 1px solid var(--outline);
+            transition: var(--transition-fast);
+        }
+
+        .sidebar-search-box input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text-main);
+            padding: 8px 4px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .sidebar.expanded .sidebar-search-box input {
+            display: block;
+        }
+
+        .sidebar-search-box .material-symbols-outlined {
+            color: var(--text-sub);
+            font-size: 22px;
         }
 
         .nav-list {
@@ -159,7 +192,7 @@
             border: 1px solid var(--outline);
             border-radius: var(--radius-xl);
             padding: 32px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -194,37 +227,64 @@
             object-fit: cover;
         }
 
-        /* SEARCH BAR */
-        .search-bar-container {
-            margin-bottom: 24px;
-            position: relative;
-            max-width: 600px;
+        /* HOMEPAGE SPECIAL CARDS (UPDATES & TEXTBOX) */
+        .home-widgets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
-        .search-input {
-            width: 100%;
-            padding: 14px 20px 14px 48px;
+        .widget-card {
             background-color: var(--surface-1);
             border: 1px solid var(--outline);
             border-radius: var(--radius-xl);
+            padding: 24px;
+        }
+
+        .widget-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .widget-header h3 {
+            font-size: 1.2rem;
             color: var(--text-main);
-            font-size: 1rem;
-            outline: none;
-            transition: var(--transition-fast);
+            font-weight: 600;
         }
 
-        .search-input:focus {
-            border-color: var(--accent);
-            background-color: var(--surface-2);
+        .update-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .search-icon {
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
+        .update-item {
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .update-date {
+            font-size: 0.75rem;
             color: var(--text-sub);
-            pointer-events: none;
+        }
+
+        .update-text {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            margin-top: 2px;
+        }
+
+        .info-textbox {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-sub);
         }
 
         /* GRID & CARDS */
@@ -333,16 +393,21 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.85rem;
+            transition: var(--transition-fast);
+        }
+
+        .accordion-btn:hover {
+            background: var(--surface-3);
         }
 
         .accordion-content {
             display: none;
-            padding: 10px 14px;
+            padding: 12px;
             background: var(--bg-color);
             border-radius: var(--radius-m);
             font-size: 0.85rem;
             color: var(--text-sub);
-            word-break: break-all;
+            word-break: break-word;
         }
 
         .accordion-content.show {
@@ -352,6 +417,40 @@
         .accordion-content a {
             color: var(--accent);
             text-decoration: underline;
+        }
+
+        /* GALLERY & SCRIPT PREVIEW */
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .screenshot-gallery img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: var(--radius-m);
+            border: 1px solid var(--outline);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .screenshot-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .script-code-box {
+            background-color: #0d0d0d;
+            border: 1px solid var(--outline);
+            padding: 10px;
+            border-radius: var(--radius-m);
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #79c0ff;
+            overflow-x: auto;
+            max-height: 150px;
         }
 
         .error-banner {
@@ -379,6 +478,13 @@
         <button class="toggle-btn" onclick="toggleSidebar()">
             <span class="material-symbols-outlined">menu</span>
         </button>
+
+        <!-- SEITENLEISTE SUCHFUNKTION -->
+        <div class="sidebar-search-box" title="Suche">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" id="sidebar-search-input" placeholder="Suche..." oninput="handleSidebarSearch(this.value)">
+        </div>
+
         <ul class="nav-list">
             <li class="nav-item active" onclick="switchTab('home', this)">
                 <span class="material-symbols-outlined">home</span>
@@ -412,26 +518,52 @@
             <div class="hero-banner">
                 <div class="hero-text">
                     <h1>Material 3 Archiv</h1>
-                    <p>Wähle eine Kategorie in der Menüleiste links oder nutze die Suche.</p>
+                    <p>Willkommen im Archiv! Nutze die Seitenleiste zum Stöbern oder Suchen.</p>
                 </div>
                 <div class="gif-showcase">
                     <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eXU2MGdhaGN1MWI3OW41OXd2YnM0Ym41OGs5ZTZ1YXA1OHlhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L1R1tvI9svvAQQyVY9/giphy.gif" alt="GIF Banner">
                 </div>
             </div>
 
-            <h2 style="margin-bottom: 20px; font-weight: 500;">Übersicht</h2>
+            <!-- STARTSEITEN WIDGETS (UPDATES & TEXTBOX) -->
+            <div class="home-widgets">
+                <!-- WAS NEU IST / UPDATES -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <span class="material-symbols-outlined">campaign</span>
+                        <h3>Was neu ist</h3>
+                    </div>
+                    <ul class="update-list">
+                        <li class="update-item">
+                            <span class="update-date">24. Juli 2026</span>
+                            <span class="update-text">Suche in Seitenleiste, Screenshot-Buttons & Script-Vorschau integriert!</span>
+                        </li>
+                        <li class="update-item">
+                            <span class="update-date">20. Juli 2026</span>
+                            <span class="update-text">Neue Android Tools und Custom Scripts im Archiv hinzugefügt.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- INFO TEXTFELD -->
+                <div class="widget-card">
+                    <div class="widget-header">
+                        <span class="material-symbols-outlined">info</span>
+                        <h3>Über dieses Archiv</h3>
+                    </div>
+                    <p class="info-textbox">
+                        Hier entstehen und lagern verschiedene Open-Source-Projekte, Minecraft-Configs, Custom Scripts und Android-Anwendungen. Klicke bei Beiträgen auf <b>Screenshots</b> oder <b>Script</b>, um mehr Details und Vorschauen zu erhalten!
+                    </p>
+                </div>
+            </div>
+
+            <h2 style="margin-bottom: 20px; font-weight: 500;" id="home-heading">Neueste Beiträge</h2>
             <div class="project-grid" id="home-grid"></div>
         </section>
 
-        <!-- KATEGORIE & SUCHE -->
+        <!-- KATEGORIE & SUCHE SEITE -->
         <section id="page-category" class="page-section">
             <h1 id="category-title" style="margin-bottom: 20px;">Kategorie</h1>
-            
-            <div class="search-bar-container">
-                <span class="material-symbols-outlined search-icon">search</span>
-                <input type="search" id="search-input" class="search-input" placeholder="In dieser Kategorie suchen..." oninput="handleSearch()">
-            </div>
-
             <div class="project-grid" id="project-grid"></div>
         </section>
     </main>
@@ -468,11 +600,26 @@
             document.getElementById('sidebar').classList.toggle('expanded');
         }
 
+        function handleSidebarSearch(query) {
+            searchQuery = query.toLowerCase();
+            const homeSec = document.getElementById('page-home');
+            const catSec = document.getElementById('page-category');
+
+            if (searchQuery.trim() !== '') {
+                // Bei Suche automatisch auf Kategorieseite wechseln
+                homeSec.classList.remove('active');
+                catSec.classList.add('active');
+                document.getElementById('category-title').innerText = "Suchergebnisse für: " + query;
+                renderSearchResults();
+            } else {
+                switchTab(currentTab, document.querySelector('.nav-item.active'));
+            }
+        }
+
         function switchTab(tab, element) {
             currentTab = tab;
             searchQuery = '';
-            const searchInput = document.getElementById('search-input');
-            if (searchInput) searchInput.value = '';
+            document.getElementById('sidebar-search-input').value = '';
 
             document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
             if (element) element.classList.add('active');
@@ -499,11 +646,6 @@
             }
         }
 
-        function handleSearch() {
-            searchQuery = document.getElementById('search-input').value.toLowerCase();
-            renderCategoryCards();
-        }
-
         function renderHome() {
             const grid = document.getElementById('home-grid');
             if (!projects || projects.length === 0) {
@@ -516,29 +658,51 @@
         function renderCategoryCards() {
             const grid = document.getElementById('project-grid');
             
-            // Vergleicht Kategorien schreibweisen-unabhängig (lowercase)
             const filtered = projects.filter(p => {
                 const pCat = (p.category || '').toLowerCase();
-                const targetCat = currentTab.toLowerCase();
-                const matchesCat = pCat === targetCat;
-
-                const nameMatch = (p.name || '').toLowerCase().includes(searchQuery);
-                const descMatch = (p.description || '').toLowerCase().includes(searchQuery);
-                
-                return matchesCat && (nameMatch || descMatch);
+                return pCat === currentTab.toLowerCase();
             });
 
             if (filtered.length === 0) {
-                grid.innerHTML = '<p style="color: var(--text-sub); grid-column: 1/-1;">Keine Einträge für diese Kategorie / Suche gefunden.</p>';
+                grid.innerHTML = '<p style="color: var(--text-sub); grid-column: 1/-1;">Keine Einträge für diese Kategorie gefunden.</p>';
                 return;
             }
 
             grid.innerHTML = filtered.map((p, i) => createCardHTML(p, i, currentTab)).join('');
         }
 
+        function renderSearchResults() {
+            const grid = document.getElementById('project-grid');
+            
+            const filtered = projects.filter(p => {
+                const nameMatch = (p.name || '').toLowerCase().includes(searchQuery);
+                const descMatch = (p.description || '').toLowerCase().includes(searchQuery);
+                const catMatch = (p.category || '').toLowerCase().includes(searchQuery);
+                return nameMatch || descMatch || catMatch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<p style="color: var(--text-sub); grid-column: 1/-1;">Keine Treffer für deine Suche gefunden.</p>';
+                return;
+            }
+
+            grid.innerHTML = filtered.map((p, i) => createCardHTML(p, i, 'search')).join('');
+        }
+
         function createCardHTML(project, idx, prefix) {
             const safeName = (project.name || 'Projekt').replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
             const uid = `${prefix}-${project.id || idx}-${safeName}`;
+
+            // Screenshots extrahieren (Array oder einzelner Link)
+            let screenshotsHTML = '';
+            if (project.screenshots) {
+                const shots = Array.isArray(project.screenshots) ? project.screenshots : [project.screenshots];
+                screenshotsHTML = shots.map(url => `
+                    <a href="${url}" target="_blank" rel="noopener noreferrer">
+                        <img src="${url}" alt="Screenshot" onerror="this.src='https://via.placeholder.com/150?text=Fehler'">
+                    </a>
+                `).join('');
+            }
 
             return `
                 <div class="card">
@@ -566,6 +730,28 @@
                             </div>
                         ` : ''}
 
+                        ${project.screenshots ? `
+                            <button class="accordion-btn" onclick="toggleAccordion('shots-${uid}')">
+                                <span>Screenshots</span>
+                                <span class="material-symbols-outlined" style="font-size: 16px;">image</span>
+                            </button>
+                            <div class="accordion-content" id="shots-${uid}">
+                                <div class="screenshot-gallery">
+                                    ${screenshotsHTML}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${project.script ? `
+                            <button class="accordion-btn" onclick="toggleAccordion('script-${uid}')">
+                                <span>Script / Code</span>
+                                <span class="material-symbols-outlined" style="font-size: 16px;">code</span>
+                            </button>
+                            <div class="accordion-content" id="script-${uid}">
+                                <div class="script-code-box">${escapeHTML(project.script)}</div>
+                            </div>
+                        ` : ''}
+
                         ${project.tutorials ? `
                             <button class="accordion-btn" onclick="toggleAccordion('tut-${uid}')">
                                 <span>Tutorial / Info</span>
@@ -583,13 +769,23 @@
         function toggleDetails(uid) {
             const desc = document.getElementById(`desc-${uid}`);
             const btn = document.getElementById(`btn-more-${uid}`);
-            if (desc) desc.classList.toggle('show');
-            if (btn) btn.classList.toggle('open');
+            if (desc && btn) {
+                desc.classList.toggle('show');
+                btn.classList.toggle('open');
+            }
         }
 
         function toggleAccordion(id) {
             const content = document.getElementById(id);
-            if (content) content.classList.toggle('show');
+            if (content) {
+                content.classList.toggle('show');
+            }
+        }
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, 
+                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+            );
         }
     </script>
 </body>
