@@ -20,7 +20,8 @@
     "description": "Minimalistisches Dark-Theme Dotfiles-Setup für Arch Linux und Hyprland mit Waybar und Rofi.",
     "sources": "https://github.com/example/dotfiles",
     "screenshots": [
-      "https://via.placeholder.com/600x400/121212/ffffff?text=Desktop+Overview"
+      "https://via.placeholder.com/600x400/121212/ffffff?text=Desktop+Overview",
+      "https://via.placeholder.com/600x400/121212/ffffff?text=Terminal+Setup"
     ],
     "script": "git clone https://github.com/example/dotfiles.git ~/.config/hypr\nhyprctl reload"
   },
@@ -31,6 +32,10 @@
     "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Minecraft+Server",
     "description": "Optimierte Server-Konfigurationen und Skripte für Paper und Fabric Instanzen.",
     "sources": "https://github.com/example/mc-configs",
+    "screenshots": [
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=Server+Console",
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=In-Game+Performance"
+    ],
     "script": "#!/bin/bash\n# Quick start server script\njava -Xms4G -Xmx8G -jar fabric-server.jar nogui",
     "tutorials": "Kopiere die Skripte in dein Serververzeichnis und passe die RAM-Zuweisung in start.sh an."
   },
@@ -41,6 +46,10 @@
     "image": "https://via.placeholder.com/400x200/282828/ffffff?text=PS3+Homebrew",
     "description": "Sammlung nützlicher Homebrew-Tools, PKG-Installer Helper und Config-Templates für PS3 HEN.",
     "sources": "https://github.com/example/ps3-hen-tools",
+    "screenshots": [
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=XMB+Menu+Helper",
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=PKG+Installer"
+    ],
     "tutorials": "Kopiere die Dateien auf einen FAT32-formatierten USB-Stick im Stammverzeichnis."
   },
   {
@@ -50,6 +59,10 @@
     "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Arch+Maintenance",
     "description": "Ein automatisches Skript zur Systempflege, Cache-Reinigung und Verwaiste-Pakete-Entfernung unter Arch Linux.",
     "sources": "https://github.com/example/arch-cleaner",
+    "screenshots": [
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=Script+Execution",
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=Clean+Log"
+    ],
     "script": "#!/bin/bash\necho \"Cleaning pacman cache...\"\nsudo pacman -Sc --noconfirm\necho \"Removing orphaned packages...\"\nsudo pacman -Rns $(pacman -Qtdq) --noconfirm"
   },
   {
@@ -59,6 +72,10 @@
     "image": "https://via.placeholder.com/400x200/282828/ffffff?text=Archive+Tool",
     "description": "Tool zum Archivieren und Strukturieren lokaler Mediensammlungen und Metadaten.",
     "sources": "https://github.com/example/media-archive",
+    "screenshots": [
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=GUI+Interface",
+      "https://via.placeholder.com/600x400/1e1e1e/d0bcff?text=Output+Folder"
+    ],
     "tutorials": "Führe main.py aus und gib den Pfad deines Zielverzeichnisses an."
   }
 ]
