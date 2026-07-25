@@ -3,12 +3,13 @@
     "id": 1,
     "name": "MoveMD Transit App",
     "category": "android",
-    "image": "assets/Picsart_26-07-24_19-04-59-267.jpg",
+    "image": "assets/MoveMD/Picsart_26-07-24_19-04-59-267.jpg",
     "description": "Eine Open-Source Nahverkehrs-App für Magdeburg im Material Design 3 Expressive Look.",
     "sources": "https://github.com/example/movemd",
     "screenshots": [
-      "https://via.placeholder.com/300x600/1e1e1e/d0bcff?text=Screen+1",
-      "https://via.placeholder.com/300x600/1e1e1e/d0bcff?text=Screen+2"
+      "assets/MoveMD/fahrplan.png",
+      "assets/MoveMD/anzeige.png",
+      "assets/MoveMD/news.png"
     ],
     "tutorials": "Lade die APK aus den GitHub Releases herunter oder baue das Projekt direkt in Android Studio."
   },
