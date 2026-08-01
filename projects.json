@@ -13,6 +13,20 @@
     ],
     "tutorials": "Lade die APK aus den GitHub Releases herunter oder baue das Projekt direkt in Android Studio."
   },
+    {
+    "id": 1,
+    "name": "TiktokYou",
+    "category": "android",
+    "image": "",
+    "description": "Tiktok Mod",
+    "sources": "https://t.me/tiktokyou",
+    "screenshots": [
+      "assets/MoveMD/fahrplan.png",
+      "assets/MoveMD/anzeige.png",
+      "assets/MoveMD/news.png"
+    ],
+    "tutorials": "Lade die APK aus den GitHub Releases herunter oder baue das Projekt direkt in Android Studio."
+  },
   {
     "id": 2,
     "name": "Material Discord (Dark Grey Fork)",
