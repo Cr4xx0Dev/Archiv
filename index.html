@@ -78,7 +78,6 @@
             transform: scale(1.05);
         }
 
-        /* SIDEBAR SEARCH BAR REDESIGN */
         .sidebar-search-box {
             position: relative;
             margin-bottom: 20px;
@@ -183,17 +182,11 @@
         }
 
         @keyframes fadeInSlide {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* HERO & GIF SHOWCASE */
+        /* HERO & WIDGETS */
         .hero-banner {
             background: linear-gradient(135deg, var(--surface-1), var(--surface-2));
             border: 1px solid var(--outline);
@@ -207,132 +200,36 @@
             position: relative;
         }
 
-        .hero-text h1 {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
+        .hero-text h1 { font-size: 2.2rem; margin-bottom: 12px; font-weight: 600; }
+        .hero-text p { color: var(--text-sub); font-size: 1.05rem; max-width: 500px; margin-bottom: 16px; }
 
-        .hero-text p {
-            color: var(--text-sub);
-            font-size: 1.05rem;
-            max-width: 500px;
-            margin-bottom: 16px;
-        }
-
-        /* LANGUAGE SELECTOR CONTROL */
         .lang-switch-container {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--surface-3);
-            padding: 6px 12px;
-            border-radius: var(--radius-l);
-            border: 1px solid var(--outline);
+            display: inline-flex; align-items: center; gap: 8px;
+            background-color: var(--surface-3); padding: 6px 12px;
+            border-radius: var(--radius-l); border: 1px solid var(--outline);
         }
 
-        .lang-switch-container label {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .lang-select {
-            background: transparent;
-            border: none;
-            color: var(--text-main);
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .lang-select option {
-            background-color: var(--surface-2);
-            color: var(--text-main);
-        }
+        .lang-switch-container label { font-size: 0.85rem; color: var(--text-sub); display: flex; align-items: center; gap: 4px; }
+        .lang-select { background: transparent; border: none; color: var(--text-main); font-size: 0.9rem; font-weight: 600; cursor: pointer; outline: none; }
+        .lang-select option { background-color: var(--surface-2); color: var(--text-main); }
 
         .gif-showcase {
-            width: 200px;
-            height: 140px;
-            border-radius: var(--radius-l);
-            overflow: hidden;
-            border: 1px solid var(--outline);
-            flex-shrink: 0;
-            background-color: var(--surface-3);
+            width: 200px; height: 140px; border-radius: var(--radius-l);
+            overflow: hidden; border: 1px solid var(--outline); flex-shrink: 0; background-color: var(--surface-3);
         }
 
-        .gif-showcase img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .gif-showcase img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* HOMEPAGE SPECIAL CARDS (UPDATES & TEXTBOX) */
-        .home-widgets {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-
-        .widget-card {
-            background-color: var(--surface-1);
-            border: 1px solid var(--outline);
-            border-radius: var(--radius-xl);
-            padding: 24px;
-        }
-
-        .widget-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-            color: var(--text-main);
-        }
-
-        .widget-header .material-symbols-outlined {
-            color: var(--accent);
-        }
-
-        .widget-header h3 {
-            font-size: 1.2rem;
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
-        .update-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .update-item {
-            display: flex;
-            flex-direction: column;
-            border-left: 2px solid var(--accent);
-            padding-left: 12px;
-        }
-
-        .update-date {
-            font-size: 0.75rem;
-            color: var(--text-sub);
-        }
-
-        .update-text {
-            font-size: 0.9rem;
-            color: var(--text-main);
-            margin-top: 2px;
-        }
-
-        .info-textbox {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-sub);
-        }
+        .home-widgets { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 32px; }
+        .widget-card { background-color: var(--surface-1); border: 1px solid var(--outline); border-radius: var(--radius-xl); padding: 24px; }
+        .widget-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--text-main); }
+        .widget-header .material-symbols-outlined { color: var(--accent); }
+        .widget-header h3 { font-size: 1.2rem; font-weight: 600; }
+        .update-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .update-item { display: flex; flex-direction: column; border-left: 2px solid var(--accent); padding-left: 12px; }
+        .update-date { font-size: 0.75rem; color: var(--text-sub); }
+        .update-text { font-size: 0.9rem; color: var(--text-main); margin-top: 2px; }
+        .info-textbox { font-size: 0.95rem; line-height: 1.6; color: var(--text-sub); }
 
         /* GRID & CARDS */
         .project-grid {
@@ -358,176 +255,117 @@
         }
 
         .card-img-wrapper {
-            width: 100%;
-            height: 180px;
-            background-color: var(--surface-2);
-            overflow: hidden;
+            width: 100%; height: 180px;
+            background-color: var(--surface-2); overflow: hidden;
         }
-
         .card-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-smooth);
+            width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);
         }
+        .card:hover .card-img-wrapper img { transform: scale(1.03); }
 
-        .card:hover .card-img-wrapper img {
-            transform: scale(1.03);
+        /* VIDEO PLAYER STYLES */
+        .video-wrapper-landscape {
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            background-color: var(--surface-2);
+        }
+        .video-wrapper-landscape iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
         }
         
-
-        .card-img-wrapper {
+        .video-wrapper-short {
             width: 100%;
-            height: 180px;
+            padding-top: 177.77%; /* 9:16 Aspect Ratio */
+            position: relative;
             background-color: var(--surface-2);
-            overflow: hidden;
+        }
+        .video-wrapper-short iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
         }
 
-        .card-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-smooth);
-        }
-
-        .card:hover .card-img-wrapper img {
-            transform: scale(1.03);
-        }
-
-        .card-header-bar {
+        /* VIDEO FILTERS */
+        .video-filters {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 20px;
+            gap: 16px;
+            margin-bottom: 24px;
         }
-
-        .card-title {
-            font-size: 1.2rem;
+        .video-filter-btn {
+            background-color: var(--surface-1);
+            border: 1px solid var(--outline);
+            color: var(--text-sub);
+            padding: 10px 20px;
+            border-radius: var(--radius-xl);
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .video-filter-btn:hover {
+            background-color: var(--surface-2);
+            color: var(--text-main);
+        }
+        .video-filter-btn.active {
+            background-color: var(--primary-container);
+            color: var(--on-primary-container);
+            border-color: var(--accent);
             font-weight: 600;
         }
 
+        .card-header-bar { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; }
+        .card-title { font-size: 1.2rem; font-weight: 600; }
         .btn-more {
-            background-color: var(--surface-2);
-            color: var(--text-main);
-            border: none;
-            padding: 8px 16px;
-            border-radius: var(--radius-l);
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            background-color: var(--surface-2); color: var(--text-main); border: none;
+            padding: 8px 16px; border-radius: var(--radius-l); font-size: 0.85rem;
+            cursor: pointer; display: flex; align-items: center; gap: 6px;
         }
+        .btn-more .icon-expand { transition: transform 0.25s ease; }
+        .btn-more.open .icon-expand { transform: rotate(180deg); }
 
-        .btn-more .icon-expand {
-            transition: transform 0.25s ease;
-        }
-
-        .btn-more.open .icon-expand {
-            transform: rotate(180deg);
-        }
-
-        .card-description {
-            display: none;
-            padding: 0 20px 16px 20px;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        .card-description.show {
-            display: block;
-        }
-
-        .card-actions {
-            padding: 16px 20px;
-            border-top: 1px solid var(--surface-2);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: auto;
-        }
-
+        .card-description { display: none; padding: 0 20px 16px 20px; color: var(--text-sub); font-size: 0.9rem; line-height: 1.4; }
+        .card-description.show { display: block; }
+        .card-actions { padding: 16px 20px; border-top: 1px solid var(--surface-2); display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
         .accordion-btn {
-            background: var(--surface-2);
-            border: none;
-            color: var(--text-main);
-            padding: 10px 14px;
-            border-radius: var(--radius-m);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            transition: var(--transition-fast);
+            background: var(--surface-2); border: none; color: var(--text-main); padding: 10px 14px;
+            border-radius: var(--radius-m); cursor: pointer; display: flex; justify-content: space-between;
+            align-items: center; font-size: 0.85rem; transition: var(--transition-fast);
         }
+        .accordion-btn:hover { background: var(--surface-3); }
+        .accordion-content { display: none; padding: 12px; background: var(--bg-color); border-radius: var(--radius-m); font-size: 0.85rem; color: var(--text-sub); word-break: break-word; }
+        .accordion-content.show { display: block; }
+        .accordion-content a { color: var(--accent); text-decoration: underline; }
 
-        .accordion-btn:hover {
-            background: var(--surface-3);
-        }
+        .screenshot-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; margin-top: 8px; }
+        .screenshot-gallery img { width: 100%; height: 80px; object-fit: cover; border-radius: var(--radius-m); border: 1px solid var(--outline); cursor: pointer; transition: transform 0.2s ease; }
+        .screenshot-gallery img:hover { transform: scale(1.05); }
 
-        .accordion-content {
-            display: none;
-            padding: 12px;
-            background: var(--bg-color);
-            border-radius: var(--radius-m);
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            word-break: break-word;
-        }
+        .script-code-box { background-color: #0d0d0d; border: 1px solid var(--outline); padding: 10px; border-radius: var(--radius-m); font-family: monospace; font-size: 0.8rem; color: #79c0ff; overflow-x: auto; max-height: 150px; }
+        
+        .error-banner { background-color: #4a1515; color: #ff9999; padding: 16px; border-radius: var(--radius-m); border: 1px solid #882222; margin-bottom: 20px; display: none; }
 
-        .accordion-content.show {
-            display: block;
+        /* ADMIN GENERATOR STYLES */
+        .admin-container {
+            display: flex; gap: 32px; flex-wrap: wrap; margin-top: 20px;
         }
-
-        .accordion-content a {
-            color: var(--accent);
-            text-decoration: underline;
+        .admin-form {
+            flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 16px;
+            background: var(--surface-1); padding: 24px; border-radius: var(--radius-xl); border: 1px solid var(--outline);
         }
-
-        /* GALLERY & SCRIPT PREVIEW */
-        .screenshot-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 8px;
-            margin-top: 8px;
+        .admin-form label { font-size: 0.85rem; color: var(--text-sub); margin-bottom: -10px; }
+        .admin-form input, .admin-form select, .admin-form textarea {
+            background: var(--surface-2); border: 1px solid var(--outline); color: var(--text-main);
+            padding: 12px; border-radius: var(--radius-m); font-family: inherit; font-size: 0.95rem;
+            outline: none; transition: border-color 0.2s;
         }
-
-        .screenshot-gallery img {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
-            border-radius: var(--radius-m);
-            border: 1px solid var(--outline);
-            cursor: pointer;
-            transition: transform 0.2s ease;
+        .admin-form input:focus, .admin-form select:focus, .admin-form textarea:focus { border-color: var(--accent); }
+        .admin-form textarea { min-height: 100px; resize: vertical; }
+        .admin-form button {
+            background: var(--accent); color: #000; font-weight: bold; padding: 14px;
+            border: none; border-radius: var(--radius-m); cursor: pointer; font-size: 1rem;
         }
-
-        .screenshot-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        .script-code-box {
-            background-color: #0d0d0d;
-            border: 1px solid var(--outline);
-            padding: 10px;
-            border-radius: var(--radius-m);
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: #79c0ff;
-            overflow-x: auto;
-            max-height: 150px;
-        }
-
-        .error-banner {
-            background-color: #4a1515;
-            color: #ff9999;
-            padding: 16px;
-            border-radius: var(--radius-m);
-            border: 1px solid #882222;
-            margin-bottom: 20px;
-            display: none;
-        }
+        .admin-output { font-family: monospace; min-height: 200px; background: #000; color: #a5d6ff; }
 
         @media (max-width: 768px) {
             .sidebar { position: fixed; height: 100vh; }
@@ -545,7 +383,6 @@
             <span class="material-symbols-outlined">menu</span>
         </button>
 
-        <!-- SEITENLEISTE SUCHFUNKTION -->
         <div class="sidebar-search-box" title="Search">
             <span class="material-symbols-outlined">search</span>
             <input type="text" id="sidebar-search-input" placeholder="Search..." oninput="handleSidebarSearch(this.value)">
@@ -555,6 +392,10 @@
             <li class="nav-item active" onclick="switchTab('home', this)">
                 <span class="material-symbols-outlined">home</span>
                 <span class="nav-text" data-i18n="nav_home">Home</span>
+            </li>
+            <li class="nav-item" onclick="switchTab('videos', this)">
+                <span class="material-symbols-outlined">smart_display</span>
+                <span class="nav-text" data-i18n="cat_videos">Videos</span>
             </li>
             <li class="nav-item" onclick="switchTab('minecraft', this)">
                 <span class="material-symbols-outlined">sports_esports</span>
@@ -594,7 +435,6 @@
                     <h1 data-i18n="hero_title">Material 3 Archive</h1>
                     <p data-i18n="hero_desc">Welcome to the archive! Use the sidebar to browse or search for content.</p>
                     
-                    <!-- LANGUAGE SELECTOR -->
                     <div class="lang-switch-container">
                         <label for="lang-select">
                             <span class="material-symbols-outlined" style="font-size: 18px;">language</span>
@@ -611,9 +451,7 @@
                 </div>
             </div>
 
-            <!-- STARTSEITEN WIDGETS (UPDATES & TEXTBOX) -->
             <div class="home-widgets">
-                <!-- WAS NEU IST / UPDATES -->
                 <div class="widget-card">
                     <div class="widget-header">
                         <span class="material-symbols-outlined">campaign</span>
@@ -621,24 +459,18 @@
                     </div>
                     <ul class="update-list">
                         <li class="update-item">
-                            <span class="update-date">July 24, 2026</span>
-                            <span class="update-text" data-i18n="update_1">Added PS3 & Themes categories, multi-language support, and screenshot expand buttons!</span>
-                        </li>
-                        <li class="update-item">
-                            <span class="update-date">July 20, 2026</span>
-                            <span class="update-text" data-i18n="update_2">Added new Android tools and custom scripts to the repository.</span>
+                            <span class="update-date">Neu</span>
+                            <span class="update-text" data-i18n="update_1">Videos Kategorie (Shorts & Landscape) & Admin Generator hinzugefügt!</span>
                         </li>
                     </ul>
                 </div>
-
-                <!-- INFO TEXTFELD -->
                 <div class="widget-card">
                     <div class="widget-header">
                         <span class="material-symbols-outlined">info</span>
                         <h3 data-i18n="widget_about_title">About this Archive</h3>
                     </div>
                     <p class="info-textbox" data-i18n="widget_about_text">
-                        Various open-source projects, Minecraft configs, PS3 mods, custom scripts, and Android applications are stored here. Click on <b>Screenshots</b>, <b>Script</b>, or <b>Sources</b> on any post to view expandable details!
+                        Various open-source projects, Minecraft configs, PS3 mods, custom scripts, and Android applications are stored here.
                     </p>
                 </div>
             </div>
@@ -650,76 +482,106 @@
         <!-- KATEGORIE & SUCHE SEITE -->
         <section id="page-category" class="page-section">
             <h1 id="category-title" style="margin-bottom: 20px;">Category</h1>
+            <div id="video-filters-container" style="display: none;">
+                <div class="video-filters">
+                    <button class="video-filter-btn" id="btn-filter-landscape" onclick="setVideoFilter('landscape')">
+                        <span class="material-symbols-outlined">desktop_windows</span> Querformat (Videos)
+                    </button>
+                    <button class="video-filter-btn" id="btn-filter-short" onclick="setVideoFilter('short')">
+                        <span class="material-symbols-outlined">smartphone</span> Hochformat (Shorts)
+                    </button>
+                </div>
+            </div>
             <div class="project-grid" id="project-grid"></div>
+        </section>
+
+        <!-- ADMIN GENERATOR SEITE -->
+        <section id="page-admin" class="page-section">
+            <h1 style="margin-bottom: 8px;">Admin Panel</h1>
+            <p style="color: var(--text-sub); margin-bottom: 24px;">JSON Eintrag generieren und kopieren.</p>
+            
+            <div class="admin-container">
+                <div class="admin-form">
+                    <label>Name / Titel</label>
+                    <input type="text" id="a-name" placeholder="z.B. Mein cooles Projekt">
+                    
+                    <label>Kategorie</label>
+                    <select id="a-cat" onchange="toggleAdminVideoFields()">
+                        <option value="android">Android & Apps</option>
+                        <option value="minecraft">Minecraft</option>
+                        <option value="ps3">PS3</option>
+                        <option value="scripte">Scripts</option>
+                        <option value="themes">Themes</option>
+                        <option value="videos">Videos</option>
+                        <option value="misc">Misc</option>
+                    </select>
+
+                    <div id="admin-image-field">
+                        <label>Bild URL oder Pfad</label>
+                        <input type="text" id="a-img" placeholder="assets/bild.jpg">
+                    </div>
+
+                    <div id="admin-video-fields" style="display: none; flex-direction: column; gap: 16px;">
+                        <label>Video Format</label>
+                        <select id="a-vtype">
+                            <option value="landscape">Querformat (16:9 Youtube)</option>
+                            <option value="short">Hochformat (9:16 Shorts/TikTok)</option>
+                        </select>
+                        <label>YouTube Link (wird automatisch in Embed konvertiert)</label>
+                        <input type="text" id="a-video" placeholder="https://youtu.be/... oder ungelisteter Link">
+                    </div>
+
+                    <label>Beschreibung</label>
+                    <textarea id="a-desc" placeholder="Kurze Beschreibung..."></textarea>
+                    
+                    <label>Quellen / Link (Optional)</label>
+                    <input type="text" id="a-sources" placeholder="https://github.com/...">
+
+                    <button onclick="generateAdminJSON()">Generieren & Vorschau aktualisieren</button>
+                    
+                    <label>Fertiger JSON Code (Kopieren & in projects.json einfügen)</label>
+                    <textarea id="a-output" class="admin-output" readonly placeholder="Hier erscheint der Code..."></textarea>
+                </div>
+                
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="margin-bottom: 16px; color: var(--text-sub);">Live Vorschau:</h3>
+                    <div id="admin-preview" style="max-width: 400px;"></div>
+                </div>
+            </div>
         </section>
     </main>
 
     <script>
-        // TRANSLATIONS DICTIONARY
         const translations = {
             en: {
-                nav_home: "Home",
-                nav_scripts: "Scripts & Tools",
-                nav_themes: "Themes & Design",
-                nav_misc: "Misc & Archive",
-                hero_title: "Material 3 Archive",
+                nav_home: "Home", nav_scripts: "Scripts & Tools", nav_themes: "Themes & Design", 
+                nav_misc: "Misc & Archive", cat_videos: "Videos", hero_title: "Material 3 Archive",
                 hero_desc: "Welcome to the archive! Use the sidebar to browse or search for content.",
-                lang_label: "Language:",
-                widget_updates_title: "What's New",
-                update_1: "Added PS3 & Themes categories, multi-language support, and screenshot expand buttons!",
-                update_2: "Added new Android tools and custom scripts to the repository.",
-                widget_about_title: "About this Archive",
-                widget_about_text: "Various open-source projects, Minecraft configs, PS3 mods, custom scripts, and Android applications are stored here. Click on Screenshots, Script, or Sources on any post to view expandable details!",
-                latest_posts: "Latest Posts",
-                search_results: "Search results for: ",
-                search_placeholder: "Search...",
-                btn_more: "More",
-                btn_sources: "Sources / Links",
-                btn_screenshots: "Screenshots",
-                btn_script: "Script / Code",
-                btn_tutorials: "Tutorial / Info",
-                no_projects: "No projects loaded.",
-                no_category_entries: "No entries found for this category.",
-                no_search_results: "No matches found for your search.",
-                no_description: "No description available.",
-                cat_minecraft: "Minecraft",
-                cat_android: "Android & Apps",
-                cat_scripte: "Scripts & Tools",
-                cat_ps3: "PS3",
-                cat_themes: "Themes & Design",
-                cat_misc: "Misc & Archive"
+                lang_label: "Language:", widget_updates_title: "What's New",
+                update_1: "Added Video Categories & Admin Generator!", widget_about_title: "About this Archive",
+                widget_about_text: "Various open-source projects, configs, mods, scripts, and apps are stored here.",
+                latest_posts: "Latest Posts", search_results: "Search results for: ",
+                search_placeholder: "Search... (Type 'admin' for Tools)", btn_more: "More", btn_sources: "Sources / Links",
+                btn_screenshots: "Screenshots", btn_script: "Script / Code", btn_tutorials: "Tutorial / Info",
+                no_projects: "No projects loaded.", no_category_entries: "No entries found.",
+                no_search_results: "No matches found.", no_description: "No description available.",
+                cat_minecraft: "Minecraft", cat_android: "Android & Apps", cat_scripte: "Scripts & Tools",
+                cat_ps3: "PS3", cat_themes: "Themes & Design", cat_misc: "Misc & Archive"
             },
             de: {
-                nav_home: "Startseite",
-                nav_scripts: "Scripte & Tools",
-                nav_themes: "Themen & Design",
-                nav_misc: "Misc & Archiv",
-                hero_title: "Material 3 Archiv",
+                nav_home: "Startseite", nav_scripts: "Scripte & Tools", nav_themes: "Themen & Design",
+                nav_misc: "Misc & Archiv", cat_videos: "Videos", hero_title: "Material 3 Archiv",
                 hero_desc: "Willkommen im Archiv! Nutze die Seitenleiste zum Stöbern oder Suchen.",
-                lang_label: "Sprache:",
-                widget_updates_title: "Was neu ist",
-                update_1: "PS3 & Themen-Kategorien, Mehrsprachigkeit und Screenshot-Buttons hinzugefügt!",
-                update_2: "Neue Android Tools und Custom Scripts im Archiv hinzugefügt.",
-                widget_about_title: "Über dieses Archiv",
-                widget_about_text: "Hier lagern verschiedene Open-Source-Projekte, Minecraft-Configs, PS3-Mods, Custom Scripts und Android-Anwendungen. Klicke bei Beiträgen auf Screenshots, Script oder Quellen für Details!",
-                latest_posts: "Neueste Beiträge",
-                search_results: "Suchergebnisse für: ",
-                search_placeholder: "Suche...",
-                btn_more: "Mehr",
-                btn_sources: "Quellen / Links",
-                btn_screenshots: "Screenshots",
-                btn_script: "Script / Code",
-                btn_tutorials: "Tutorial / Info",
-                no_projects: "Keine Projekte geladen.",
-                no_category_entries: "Keine Einträge für diese Kategorie gefunden.",
-                no_search_results: "Keine Treffer für deine Suche gefunden.",
-                no_description: "Keine Beschreibung vorhanden.",
-                cat_minecraft: "Minecraft",
-                cat_android: "Android & Apps",
-                cat_scripte: "Scripte & Tools",
-                cat_ps3: "PS3",
-                cat_themes: "Themen & Design",
-                cat_misc: "Misc & Archiv"
+                lang_label: "Sprache:", widget_updates_title: "Was neu ist",
+                update_1: "Video Kategorien & Admin Generator hinzugefügt!", widget_about_title: "Über dieses Archiv",
+                widget_about_text: "Hier lagern verschiedene Open-Source-Projekte, Configs, Mods, Scripts und Anwendungen.",
+                latest_posts: "Neueste Beiträge", search_results: "Suchergebnisse für: ",
+                search_placeholder: "Suche... ('admin' für Generator)", btn_more: "Mehr", btn_sources: "Quellen / Links",
+                btn_screenshots: "Screenshots", btn_script: "Script / Code", btn_tutorials: "Tutorial / Info",
+                no_projects: "Keine Projekte geladen.", no_category_entries: "Keine Einträge gefunden.",
+                no_search_results: "Keine Treffer gefunden.", no_description: "Keine Beschreibung vorhanden.",
+                cat_minecraft: "Minecraft", cat_android: "Android & Apps", cat_scripte: "Scripte & Tools",
+                cat_ps3: "PS3", cat_themes: "Themen & Design", cat_misc: "Misc & Archiv"
             }
         };
 
@@ -727,76 +589,63 @@
         let projects = [];
         let currentTab = 'home';
         let searchQuery = '';
+        let currentVideoFilter = 'landscape';
 
-        // SEITENSTART: LADE JSON & INITIALISIERE SPRACHE
         window.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('sidebar-search-input');
-            if (searchInput) {
-                searchInput.placeholder = translations[currentLang].search_placeholder;
-            }
+            if (searchInput) searchInput.placeholder = translations[currentLang].search_placeholder;
 
             fetch('projects.json')
-                .then(res => {
-                    if (!res.ok) throw new Error("HTTP Error Status " + res.status);
-                    return res.json();
-                })
-                .then(data => {
-                    projects = data;
-                    renderHome();
-                })
-                .catch(err => {
-                    showError("<b>Error loading projects.json:</b><br>" + err.message + 
-                              "<br><small>Tip: If opened locally via file click, use a local server (e.g., Live Server in VS Code).</small>");
-                });
+                .then(res => { if (!res.ok) throw new Error("HTTP Error Status " + res.status); return res.json(); })
+                .then(data => { projects = data; renderHome(); })
+                .catch(err => { showError("<b>Error loading projects.json:</b><br>" + err.message); });
         });
 
         function changeLanguage(lang) {
             if (!translations[lang]) return;
             currentLang = lang;
-
-            // Update DOM text elements with data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[currentLang][key]) {
-                    el.innerText = translations[currentLang][key];
-                }
+                if (translations[currentLang][key]) el.innerText = translations[currentLang][key];
             });
-
-            // Update search placeholder
             const searchInput = document.getElementById('sidebar-search-input');
-            if (searchInput) {
-                searchInput.placeholder = translations[currentLang].search_placeholder;
-            }
+            if (searchInput) searchInput.placeholder = translations[currentLang].search_placeholder;
 
-            // Re-render current tab
-            if (currentTab === 'home') {
-                renderHome();
-            } else if (searchQuery.trim() !== '') {
-                renderSearchResults();
-            } else {
-                updateCategoryTitle(currentTab);
-                renderCategoryCards();
-            }
+            if (currentTab === 'home') renderHome();
+            else if (searchQuery.trim() !== '' && searchQuery !== 'admin') renderSearchResults();
+            else if (currentTab !== 'admin') { updateCategoryTitle(currentTab); renderCategoryCards(); }
         }
-        
+
         function showError(msg) {
             const errBox = document.getElementById('error-box');
-            errBox.innerHTML = msg;
-            errBox.style.display = 'block';
+            errBox.innerHTML = msg; errBox.style.display = 'block';
         }
 
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('expanded');
-        }
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('expanded'); }
 
         function handleSidebarSearch(query) {
             searchQuery = query.toLowerCase();
             const homeSec = document.getElementById('page-home');
             const catSec = document.getElementById('page-category');
+            const adminSec = document.getElementById('page-admin');
+
+            // ADMIN PANEL AUFRUFEN
+            if (searchQuery.trim() === 'admin') {
+                homeSec.classList.remove('active');
+                catSec.classList.remove('active');
+                adminSec.classList.add('active');
+                document.getElementById('sidebar-search-input').value = '';
+                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                currentTab = 'admin';
+                return;
+            }
+
+            if (adminSec) adminSec.classList.remove('active');
 
             if (searchQuery.trim() !== '') {
                 homeSec.classList.remove('active');
                 catSec.classList.add('active');
+                document.getElementById('video-filters-container').style.display = 'none';
                 document.getElementById('category-title').innerText = translations[currentLang].search_results + query;
                 renderSearchResults();
             } else {
@@ -805,6 +654,7 @@
         }
 
         function switchTab(tab, element) {
+            if (tab === 'admin') return; // Admin kann nicht über normale Tabs aufgerufen werden
             currentTab = tab;
             searchQuery = '';
             document.getElementById('sidebar-search-input').value = '';
@@ -814,79 +664,101 @@
 
             const homeSec = document.getElementById('page-home');
             const catSec = document.getElementById('page-category');
+            const adminSec = document.getElementById('page-admin');
+            const videoFilters = document.getElementById('video-filters-container');
+
+            adminSec.classList.remove('active');
 
             if (tab === 'home') {
                 homeSec.classList.add('active');
                 catSec.classList.remove('active');
+                videoFilters.style.display = 'none';
                 renderHome();
             } else {
                 homeSec.classList.remove('active');
                 catSec.classList.add('active');
-                updateCategoryTitle(tab);
-                renderCategoryCards();
+                
+                if (tab === 'videos') {
+                    videoFilters.style.display = 'block';
+                    document.getElementById('category-title').innerText = translations[currentLang].cat_videos || 'Videos';
+                    setVideoFilter('landscape'); // Default Videos Ansicht
+                } else {
+                    videoFilters.style.display = 'none';
+                    updateCategoryTitle(tab);
+                    renderCategoryCards();
+                }
             }
         }
 
+        function setVideoFilter(type) {
+            currentVideoFilter = type;
+            document.getElementById('btn-filter-landscape').classList.toggle('active', type === 'landscape');
+            document.getElementById('btn-filter-short').classList.toggle('active', type === 'short');
+            renderCategoryCards();
+        }
+
         function updateCategoryTitle(tab) {
-            const titles = {
-                'minecraft': translations[currentLang].cat_minecraft,
-                'android': translations[currentLang].cat_android,
-                'scripte': translations[currentLang].cat_scripte,
-                'ps3': translations[currentLang].cat_ps3,
-                'themes': translations[currentLang].cat_themes,
-                'misc': translations[currentLang].cat_misc
-            };
+            const titles = { 'minecraft': translations[currentLang].cat_minecraft, 'android': translations[currentLang].cat_android, 'scripte': translations[currentLang].cat_scripte, 'ps3': translations[currentLang].cat_ps3, 'themes': translations[currentLang].cat_themes, 'misc': translations[currentLang].cat_misc };
             document.getElementById('category-title').innerText = titles[tab] || tab;
         }
 
         function renderHome() {
             const grid = document.getElementById('home-grid');
-            if (!projects || projects.length === 0) {
-                grid.innerHTML = `<p style="color: var(--text-sub);">${translations[currentLang].no_projects}</p>`;
-                return;
-            }
+            if (!projects || projects.length === 0) { grid.innerHTML = `<p style="color: var(--text-sub);">${translations[currentLang].no_projects}</p>`; return; }
             grid.innerHTML = projects.slice(0, 6).map((p, i) => createCardHTML(p, i, 'home')).join('');
         }
 
         function renderCategoryCards() {
             const grid = document.getElementById('project-grid');
-            
-            const filtered = projects.filter(p => {
-                const pCat = (p.category || '').toLowerCase();
-                return pCat === currentTab.toLowerCase();
-            });
+            let filtered = [];
+
+            if (currentTab === 'videos') {
+                filtered = projects.filter(p => (p.category || '').toLowerCase() === 'videos' && p.video_type === currentVideoFilter);
+            } else {
+                filtered = projects.filter(p => (p.category || '').toLowerCase() === currentTab.toLowerCase());
+            }
 
             if (filtered.length === 0) {
                 grid.innerHTML = `<p style="color: var(--text-sub); grid-column: 1/-1;">${translations[currentLang].no_category_entries}</p>`;
                 return;
             }
-
             grid.innerHTML = filtered.map((p, i) => createCardHTML(p, i, currentTab)).join('');
         }
 
         function renderSearchResults() {
             const grid = document.getElementById('project-grid');
-            
             const filtered = projects.filter(p => {
                 const nameMatch = (p.name || '').toLowerCase().includes(searchQuery);
                 const descMatch = (p.description || '').toLowerCase().includes(searchQuery);
                 const catMatch = (p.category || '').toLowerCase().includes(searchQuery);
                 return nameMatch || descMatch || catMatch;
             });
-
-            if (filtered.length === 0) {
-                grid.innerHTML = `<p style="color: var(--text-sub); grid-column: 1/-1;">${translations[currentLang].no_search_results}</p>`;
-                return;
-            }
-
+            if (filtered.length === 0) { grid.innerHTML = `<p style="color: var(--text-sub); grid-column: 1/-1;">${translations[currentLang].no_search_results}</p>`; return; }
             grid.innerHTML = filtered.map((p, i) => createCardHTML(p, i, 'search')).join('');
         }
 
         function createCardHTML(project, idx, prefix) {
             const safeName = (project.name || 'Project').replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
             const uid = `${prefix}-${project.id || idx}-${safeName}`;
+            const t = translations[currentLang];
 
-            // Screenshots extrahieren (Array oder einzelner String)
+            // LOGIK: WENN VIDEO KATEGORIE, DANN IFRAME LADEN, SONST BILD
+            let mediaHTML = '';
+            if (project.category === 'videos' && project.video_url) {
+                const wrapperClass = project.video_type === 'short' ? 'video-wrapper-short' : 'video-wrapper-landscape';
+                mediaHTML = `
+                    <div class="${wrapperClass}">
+                        <iframe src="${project.video_url}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                `;
+            } else {
+                mediaHTML = `
+                    <div class="card-img-wrapper">
+                        <img src="${project.image || ''}" alt="${project.name || 'Image'}" onerror="this.src='https://via.placeholder.com/400x200/282828/ffffff?text=No+Image'">
+                    </div>
+                `;
+            }
+
             let screenshotsHTML = '';
             if (project.screenshots) {
                 const shots = Array.isArray(project.screenshots) ? project.screenshots : [project.screenshots];
@@ -897,13 +769,9 @@
                 `).join('');
             }
 
-            const t = translations[currentLang];
-
             return `
                 <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="${project.image || ''}" alt="${project.name || 'Image'}" onerror="this.src='https://via.placeholder.com/400x200/282828/ffffff?text=No+Image'">
-                    </div>
+                    ${mediaHTML}
                     <div class="card-header-bar">
                         <span class="card-title">${project.name || 'Untitled'}</span>
                         <button class="btn-more" id="btn-more-${uid}" onclick="toggleDetails('${uid}')">
@@ -924,37 +792,26 @@
                                 <a href="${project.sources}" target="_blank" rel="noopener noreferrer">${project.sources}</a>
                             </div>
                         ` : ''}
-
                         ${project.screenshots ? `
                             <button class="accordion-btn" onclick="toggleAccordion('shots-${uid}')">
                                 <span>${t.btn_screenshots}</span>
                                 <span class="material-symbols-outlined" style="font-size: 16px;">image</span>
                             </button>
-                            <div class="accordion-content" id="shots-${uid}">
-                                <div class="screenshot-gallery">
-                                    ${screenshotsHTML}
-                                </div>
-                            </div>
+                            <div class="accordion-content" id="shots-${uid}"><div class="screenshot-gallery">${screenshotsHTML}</div></div>
                         ` : ''}
-
                         ${project.script ? `
                             <button class="accordion-btn" onclick="toggleAccordion('script-${uid}')">
                                 <span>${t.btn_script}</span>
                                 <span class="material-symbols-outlined" style="font-size: 16px;">code</span>
                             </button>
-                            <div class="accordion-content" id="script-${uid}">
-                                <div class="script-code-box">${escapeHTML(project.script)}</div>
-                            </div>
+                            <div class="accordion-content" id="script-${uid}"><div class="script-code-box">${escapeHTML(project.script)}</div></div>
                         ` : ''}
-
                         ${project.tutorials ? `
                             <button class="accordion-btn" onclick="toggleAccordion('tut-${uid}')">
                                 <span>${t.btn_tutorials}</span>
                                 <span class="material-symbols-outlined" style="font-size: 16px;">help_outline</span>
                             </button>
-                            <div class="accordion-content" id="tut-${uid}">
-                                ${project.tutorials}
-                            </div>
+                            <div class="accordion-content" id="tut-${uid}">${project.tutorials}</div>
                         ` : ''}
                     </div>
                 </div>
@@ -964,23 +821,60 @@
         function toggleDetails(uid) {
             const desc = document.getElementById(`desc-${uid}`);
             const btn = document.getElementById(`btn-more-${uid}`);
-            if (desc && btn) {
-                desc.classList.toggle('show');
-                btn.classList.toggle('open');
-            }
+            if (desc && btn) { desc.classList.toggle('show'); btn.classList.toggle('open'); }
         }
-
         function toggleAccordion(id) {
             const content = document.getElementById(id);
-            if (content) {
-                content.classList.toggle('show');
+            if (content) content.classList.toggle('show');
+        }
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag));
+        }
+
+        // ADMIN FUNKTIONEN
+        function toggleAdminVideoFields() {
+            const cat = document.getElementById('a-cat').value;
+            if (cat === 'videos') {
+                document.getElementById('admin-video-fields').style.display = 'flex';
+                document.getElementById('admin-image-field').style.display = 'none';
+            } else {
+                document.getElementById('admin-video-fields').style.display = 'none';
+                document.getElementById('admin-image-field').style.display = 'block';
             }
         }
 
-        function escapeHTML(str) {
-            return str.replace(/[&<>'"]/g, 
-                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-            );
+        function generateAdminJSON() {
+            let cat = document.getElementById('a-cat').value;
+            let obj = {
+                id: Date.now(), // Generiert eine einzigartige ID
+                name: document.getElementById('a-name').value || "Neues Projekt",
+                category: cat,
+                description: document.getElementById('a-desc').value
+            };
+
+            const sources = document.getElementById('a-sources').value;
+            if(sources) obj.sources = sources;
+
+            if (cat === 'videos') {
+                obj.video_type = document.getElementById('a-vtype').value;
+                let vidUrl = document.getElementById('a-video').value;
+                
+                // Konvertiere normale YouTube Links zu Embeds
+                if (vidUrl.includes('watch?v=')) {
+                    vidUrl = vidUrl.replace('watch?v=', 'embed/').split('&')[0];
+                } else if (vidUrl.includes('youtu.be/')) {
+                    vidUrl = vidUrl.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0];
+                }
+                obj.video_url = vidUrl;
+            } else {
+                obj.image = document.getElementById('a-img').value;
+            }
+
+            // Preview Rendern
+            document.getElementById('admin-preview').innerHTML = createCardHTML(obj, 999, 'admin');
+            
+            // Code in Textarea schreiben (mit Komma am Ende, damit man es direkt anhängen kann)
+            document.getElementById('a-output').value = JSON.stringify(obj, null, 2) + ",";
         }
     </script>
 </body>
