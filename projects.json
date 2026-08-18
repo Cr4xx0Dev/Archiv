@@ -93,4 +93,33 @@
     ],
     "tutorials": "Führe main.py aus und gib den Pfad deines Zielverzeichnisses an."
   }
+  [
+  {
+    "id": 1,
+    "name": "MoveMD Transit App",
+    "category": "android",
+    "image": "assets/MoveMD/Picsart_26-07-24_19-04-59-267.jpg",
+    "description": "Eine Open-Source Nahverkehrs-App...",
+    "sources": "https://github.com/example/movemd",
+    "screenshots": [
+      "assets/MoveMD/fahrplan.png"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Querformat Video Test (YouTube)",
+    "category": "videos",
+    "video_type": "landscape",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "description": "Ein ungelistetes YouTube Video im 16:9 Format.",
+    "sources": "https://youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    "id": 102,
+    "name": "Hochkant Short Test",
+    "category": "videos",
+    "video_type": "short",
+    "video_url": "https://www.youtube.com/embed/n4P1tXFzQ3I",
+    "description": "Dieses Video ist hochkant (9:16) formatiert und wird wie bei TikTok/Shorts angezeigt."
+  }
 ]
