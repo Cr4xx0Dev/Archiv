@@ -1,0 +1,16 @@
+{
+  "minecraft": [
+    "Bedrock",
+    "Java Edition",
+    "Server Plugins"
+  ],
+  "ps3": [
+    "Custom Firmware",
+    "Homebrew",
+    "Tools"
+  ],
+  "android": [
+    "Apps",
+    "Modules"
+  ]
+}
